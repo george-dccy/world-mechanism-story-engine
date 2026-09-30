@@ -2,26 +2,38 @@
 
 ## 已实现
 
-### `wm-mechanism-explorer` — v0.1
-第一个可执行认知 Skill。
+### wm-mechanism-explorer — v0.2
+认知层入口 Skill。
 
-目标不是“一句话出内容”，而是：
-- 把真实问题拆深；
-- 把创意母题拉回机制层；
+负责：
+- operationalize 模糊问题；
+- 建 Question Ladder；
+- 生成 competing mechanism candidates；
 - 区分 F / I / H / R；
-- 建立 Mechanism Map；
-- 用反事实暴露机制；
-- 把最后的价值判断留给作者。
+- 建 Mechanism Map；
+- 用 consequence ladder 或 branching scenarios 做反事实；
+- 在生产前停止，把关键判断交还给作者。
 
-内置 5 个 eval，覆盖知识点换皮、历史机制、推荐算法、母题先行和空泛“人性”主题。
+H01 / S01 实跑后新增：
+- Core / Supporting / Consequence 分层；
+- 社会题先定义实验边界；
+- 高不确定系统使用分支推演。
+
+### wm-research-agent — v0.1
+证据层 Skill。
+
+只有两种模式：
+- **Pass A｜Premise Check**：创意承诺前，纠正前提、术语、日期和范围；
+- **Pass B｜Evidence Pack**：Blueprint 形成后，建立 claim ledger、source ledger、Do Not Strengthen 与生产证据。
+
+它不写最终文章、脚本或故事。
 
 ## 下一批
 
-1. `wm-research-agent`
-2. `wm-creative-director`
-3. `wm-story-builder`
-4. `wm-expression-router`
-5. `wm-reviewer`
+1. wm-creative-director
+2. wm-story-builder
+3. wm-expression-router
+4. wm-reviewer
 
 原则：
 - 每个 Skill 有明确输入输出；

@@ -1,0 +1,61 @@
+id: H01-pass-a
+mode: pass-a
+checked_at: "2026-10-01"
+scope:
+  geography: "North America / United States"
+  period: "1883-1918"
+status: partially-supported
+premise: "1883年美国政府统一规定四个时区，因此全国从那天开始统一时间。"
+
+claims:
+  - claim_id: H01-F01
+    claim: "1883年前北美许多城镇使用地方太阳时间。"
+    label: F
+    confidence: high
+    source_ids: [S1]
+    allowed_wording: "1883年前，北美许多城镇仍按本地太阳位置设定时间。"
+    do_not_strengthen_to: "1883年前所有地方都只使用太阳时间。"
+
+  - claim_id: H01-F02
+    claim: "北美铁路在1883年11月18日切换到Standard Railway Time。"
+    label: F
+    confidence: high
+    source_ids: [S1, S2]
+    allowed_wording: "1883年11月18日，北美铁路切换到新的标准铁路时间系统。"
+    do_not_strengthen_to: "1883年美国联邦政府依法建立了标准时区。"
+
+  - claim_id: H01-F03
+    claim: "美国联邦Standard Time Act在1918年通过。"
+    label: F
+    confidence: high
+    source_ids: [S2]
+    allowed_wording: "美国直到1918年才通过联邦Standard Time Act。"
+    do_not_strengthen_to: "1918年才有人开始使用标准时间。"
+
+sources:
+  - source_id: S1
+    title: "Synchronizing Time"
+    publisher: "Smithsonian National Museum of American History"
+    url: "https://americanhistory.si.edu/ontime/synchronizing/zones.html"
+    publication_date: null
+    source_tier: 2
+    primary: false
+    notes: "Museum synthesis with object records and timeline."
+
+  - source_id: S2
+    title: "The Day of Two Noons"
+    publisher: "Library of Congress"
+    url: "https://guides.loc.gov/this-month-in-business-history/november/day-of-two-noons"
+    publication_date: null
+    source_tier: 2
+    primary: false
+    notes: "Separates 1883 railroad switch from 1918 federal law."
+
+evidence_gaps:
+  - "1883切换日具体城市通知流程仍需Pass B考据。"
+  - "telegraph messenger的具体任务边界需进一步核对。"
+
+mechanism_correction: "把‘政府统一时区’改成‘铁路网络先推动标准铁路时间，城市逐步采用，后在1918年联邦立法中正式制度化’。"
+do_not_strengthen:
+  - "不要把1883铁路采用写成联邦政府命令。"
+  - "不要把铁路写成标准时间形成的唯一历史原因。"

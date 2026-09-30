@@ -9,37 +9,24 @@
 系统允许两种合法起点：
 
 ### Question-first
-```text
 真实困惑 → Mechanism Explorer → 创意发散
-```
 
 ### Spark-first
-```text
 有生命力的母题 → 创意发散 → Mechanism Explorer
-```
 
 两条路会汇合到：
 
-```text
-Mechanism ↔ Creative Exploration
-          ↓
-      Editorial Gate
-          ↓
-   Creative Blueprint
-          ↓
-   Research / Evidence
-          ↓
- Story / Essay / Explanation
-          ↓
-   Expression Router
-          ↓
-Video / Article / Comic / Talk / Other
-          ↓
-   Production + QA
-          ↓
-     Retrospective
-          ↺
-```
+Mechanism ↔ Creative Exploration  
+→ Editorial Gate  
+→ Creative Blueprint  
+→ Research Pass B / Evidence Pack  
+→ Story / Essay / Explanation  
+→ Expression Router  
+→ Video / Article / Comic / Talk / Other  
+→ Production + QA  
+→ Retrospective
+
+事实依赖题在 Mechanism Explorer 前后可触发 **Research Pass A｜Premise Check**。
 
 **先理解，再表达；先设计，再生产。**
 
@@ -53,31 +40,47 @@ Video / Article / Comic / Talk / Other
 
 Mechanism Explorer 与 Creative Exploration 是一个可往返的核心回路，而不是僵硬的单向流水线。
 
-## 两个核心资产
+## 当前两个核心 Skill
 
-### Mechanism Explorer
-持续追问表面现象背后的机制、力量、约束、反馈和反事实，目标是让作者对世界多理解一层。
+### wm-mechanism-explorer
+把“我觉得这里有点奇怪”推进成 Mechanism Map。它负责 operationalize、 competing mechanisms、F/I/H/R、反事实与 Creator Gate。
 
-### Creative Blueprint
+### wm-research-agent
+把研究拆成两次：
+- Pass A：创意前纠错；
+- Pass B：Blueprint 后建证据包。
+
+研究的目的不是给稿子贴引用，而是**修正现实模型并限制我们能说多强**。
+
+## Creative Blueprint
+
 所有表达形式共享的“源代码”。一个成熟 Blueprint 应能被编译成视频、公众号文章、漫画、演讲、亲子讨论或其他作品，而不被某个媒介反向绑架。
 
 ## 仓库分工
-- `docs/`：项目哲学、架构、边界和人机协作方式
-- `engine/`：机制探索、Creative Blueprint、故事、研究、质量评审
-- `schemas/`：核心中间产物的机器可读结构
-- `examples/`：Blueprint 等真实样例
-- `renderers/`：表达编译器，而非内容核心
-- `skills/`：未来可执行 Agent / Skill
-- `tests/golden-cases/`：保护创作味道与核心原则的黄金案例
-- `references/`：外部工程参考及吸收边界
+- docs/：项目哲学、架构、边界、人机协作与实跑复盘
+- engine/：机制探索、Creative Blueprint、故事、研究、质量评审
+- schemas/：Blueprint / Evidence Pack 等机器可读接口
+- examples/：真实 Blueprint 与 Evidence Pack 样例
+- runs/：具体案例的真实运行记录
+- renderers/：表达编译器，而非内容核心
+- skills/：可执行的人机协作单元
+- tests/golden-cases/：保护创作味道与核心原则
+- references/：外部工程参考及吸收边界
 
-## v0.1 边界
+## v0.1 三案例基线
+- A08：科学 / 寓言 / 关系型
+- H01：历史 / 技术 / 制度型
+- S01：当代社会 / 多方激励 / 非故事型
+
+H01 和 S01 当前仍是 Golden Candidate，只有在真实作品完成并经过人工复盘后才升级。
+
+## 不变边界
 1. 科学是重要来源域，但不是项目边界。
-2. 技术、历史、文化、社会机制和有长期解释价值的当代现象都可以进入。
-3. 热点只是入口，机制才是主角。
-4. 固定爆款模板不是默认叙事结构。
-5. Renderer 不能反向决定题材与思想。
-6. AI 可以提出候选、证据和推演，但关键取舍必须保留人的判断。
-7. 事实表达必须区分：已核验事实 / 解释 / 假设 / 寓言规则。
+2. 热点只是入口，机制才是主角。
+3. 固定爆款模板不是默认叙事结构。
+4. Renderer 不能反向决定题材与思想。
+5. AI 可以提出候选、证据和推演，但关键取舍保留人的判断。
+6. 事实表达必须区分 F / I / H / R。
+7. CI 只能证明结构没坏，不能证明创意已被批准。
 
-详见 [PROJECT.md](PROJECT.md) 与 [docs/architecture.md](docs/architecture.md)。
+详见 PROJECT.md、docs/architecture.md 与 docs/workflow.md。

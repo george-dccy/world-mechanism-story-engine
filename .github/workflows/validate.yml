@@ -21,5 +21,8 @@ jobs:
       - name: Validate Creative Blueprints
         run: python scripts/validate_blueprints.py
 
-      - name: Validate Mechanism Explorer Skill
+      - name: Validate Evidence Packs
+        run: python scripts/validate_evidence_packs.py
+
+      - name: Validate Skill contracts
         run: python scripts/validate_skill.py

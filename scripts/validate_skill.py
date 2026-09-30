@@ -6,47 +6,85 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-SKILL = ROOT / "skills" / "wm-mechanism-explorer" / "SKILL.md"
-REQUIRED_REFS = [
-    "references/question-ladder.md",
-    "references/mechanism-map-template.md",
-    "references/counterfactual-protocol.md",
-    "references/output-contract.md",
-    "tests/evals.md",
-]
+
+SKILLS = {
+    "wm-mechanism-explorer": {
+        "required": [
+            "references/question-ladder.md",
+            "references/mechanism-map-template.md",
+            "references/counterfactual-protocol.md",
+            "references/output-contract.md",
+            "tests/evals.md",
+        ],
+        "must_contain": [
+            "F — Fact",
+            "R — Fictional Rule",
+            "Stop before production",
+            "Operationalize ambiguous concepts",
+        ],
+    },
+    "wm-research-agent": {
+        "required": [
+            "references/source-hierarchy.md",
+            "references/claim-ledger.md",
+            "references/two-pass-workflow.md",
+            "tests/evals.md",
+        ],
+        "must_contain": [
+            "Pass A — Premise Check",
+            "Pass B — Evidence Pack",
+            "Do Not Strengthen",
+            "F — Fact",
+            "R — Fictional Rule",
+        ],
+    },
+}
 
 
-def main() -> int:
-    text = SKILL.read_text(encoding="utf-8")
+def validate(name: str, spec: dict) -> list[str]:
+    skill_dir = ROOT / "skills" / name
+    skill_file = skill_dir / "SKILL.md"
     problems: list[str] = []
+
+    if not skill_file.exists():
+        return [f"missing {skill_file.relative_to(ROOT)}"]
+
+    text = skill_file.read_text(encoding="utf-8")
 
     if not text.startswith("---\n"):
         problems.append("SKILL.md must start with YAML front matter")
 
     front = text.split("---", 2)[1] if text.count("---") >= 2 else ""
-    if not re.search(r"(?m)^name:\s*wm-mechanism-explorer\s*$", front):
-        problems.append("front matter name must be wm-mechanism-explorer")
+    if not re.search(rf"(?m)^name:\s*{re.escape(name)}\s*$", front):
+        problems.append(f"front matter name must be {name}")
     if not re.search(r"(?m)^description:\s*.+$", front):
         problems.append("front matter must contain a description")
 
-    for rel in REQUIRED_REFS:
-        path = SKILL.parent / rel
+    for rel in spec["required"]:
+        path = skill_dir / rel
         if not path.exists():
             problems.append(f"missing skill file: {path.relative_to(ROOT)}")
 
-    if "F — Fact" not in text or "R — Fictional Rule" not in text:
-        problems.append("skill must preserve F/I/H/R evidence separation")
+    for phrase in spec["must_contain"]:
+        if phrase not in text:
+            problems.append(f"SKILL.md must preserve phrase/contract: {phrase}")
 
-    if "Stop before production" not in text:
-        problems.append("skill must contain the pre-production stop gate")
+    return problems
 
-    if problems:
-        for problem in problems:
-            print(f"FAIL: {problem}")
-        return 1
 
-    print("PASS skills/wm-mechanism-explorer")
-    return 0
+def main() -> int:
+    failed = False
+    for name, spec in SKILLS.items():
+        problems = validate(name, spec)
+        if problems:
+            failed = True
+            print(f"FAIL skills/{name}")
+            for problem in problems:
+                print(f"  - {problem}")
+        else:
+            print(f"PASS skills/{name}")
+
+    return 1 if failed else 0
 
 
 if __name__ == "__main__":
