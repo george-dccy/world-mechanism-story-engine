@@ -1,0 +1,104 @@
+id: H01-standard-time
+version: "0.1"
+status: draft
+
+source_domain:
+  - history
+  - technology
+  - society
+
+question:
+  surface: "为什么大家不能各自按太阳看时间？"
+  core: "为什么跨地点网络发展以后，共享时间会从方便工具变成基础设施？"
+  why_i_care: "它能让一个看似天然的日常事实重新显出背后的社会协调机制。"
+
+mechanism:
+  one_sentence_model: "当跨地点协作的频率和速度提高，时间会从本地观察转变为整个网络共享的协调协议。"
+  actors:
+    - "城镇居民"
+    - "铁路公司"
+    - "旅客与商人"
+    - "天文台与电报网络"
+    - "城市与政府"
+  forces:
+    - "地方太阳时间差异"
+    - "跨城列车调度"
+    - "时刻表对未来事件的共同承诺"
+    - "电报带来的远距离同步"
+  feedback_loops:
+    - "铁路网络扩大 -> 时间冲突成本上升 -> 更多节点采用统一标准 -> 统一标准价值上升"
+  evidence_status:
+    facts:
+      - "1883年前北美存在大量地方时间。"
+      - "1880年代铁路内部约有50套区域时间。"
+      - "1883-11-18多数北美铁路采用标准铁路时间。"
+      - "1918年美国联邦立法确立标准时间制度。"
+    interpretations:
+      - "标准时间的核心价值是跨节点协调，而不只是钟表精度。"
+    hypotheses:
+      - "高密度网络会把共享时间逐渐变成不可见基础设施。"
+
+creative_hypothesis:
+  operation: "Expose"
+  changed_rule: "不新增虚构规则；把1883年真实的‘两个正午’作为可见制度切换。"
+  why_this_reveals_the_mechanism: "观众能直接看到同一座城从本地时间切换到网络时间时，普通行为怎样被重新协调。"
+
+world:
+  rule: "历史现实：铁路标准时间开始取代地方太阳时间。"
+  invariant: "所有制度与日期必须遵守史实边界。"
+  forbidden_shortcuts:
+    - "不让虚构人物成为发明者"
+    - "不把铁路写成唯一原因"
+    - "不把旧时间观写成愚昧"
+
+human_stakes:
+  ordinary_life_change: "约车、换乘、开店、见面和钟表设置必须重新对齐。"
+  who_adapts_first: "依赖跨城网络的人。"
+  who_pays_cost: "仍按地方时间行动、却进入标准网络的人。"
+
+story:
+  protagonist: "铁路小城的少年印刷学徒（虚构）"
+  relationship: "学徒 × 老钟表匠 × 车站调度"
+  external_task: "在第二个正午前更新下午列车相关时刻表，让全城知道‘三点’指哪个三点。"
+  obstacle: "不同机构与居民仍使用不同时间标准。"
+  repeated_action: "不断校对、重印、调钟；每次‘几点了’都从自然问题变成协调问题。"
+  state_changes:
+    - "发现同一时刻有多个答案"
+    - "铁路先切换"
+    - "商店与旅馆被迫选择"
+    - "公共生活开始跟随标准时间"
+  ending_image: "学徒抬头看太阳，再看已经统一后的车站钟；两者都没有坏，只是城市选择了以后跟哪一个走。"
+  ending_question: "我们今天认为天然的时间，有多少其实是为了让陌生人协作而建立的共同协议？"
+
+knowledge_payload:
+  child_layer:
+    - "过去不同地方的正午可以不同。"
+    - "铁路让统一时间变得重要。"
+    - "时区是一种让很多人协作的标准。"
+  adult_layer:
+    - "基础设施最成功的时候，往往会被体验成自然事实。"
+    - "标准化既降低协调成本，也会改变地方自主性。"
+  optional_afterword:
+    - "1883标准铁路时间与1918联邦立法的史实说明。"
+
+expression:
+  primary_mode: "historical-story"
+  renderer_candidates:
+    - "story-film"
+    - "archive-collage"
+    - "article"
+    - "whiteboard"
+  must_preserve:
+    - "同步机制"
+    - "1883与1918边界"
+    - "不同立场都合理"
+    - "不把标准化写成单向进步叙事"
+  may_change:
+    - "虚构小城"
+    - "具体学徒身份"
+    - "媒介和篇幅"
+
+creator_notes:
+  what_surprised_me: "钟表显示的不只是天文时间，也是一种网络协议。"
+  what_i_am_not_sure_about: "虚构小城的细节需要继续核对当时铁路与城市生活资料。"
+  what_i_refuse_to_simplify: "不把历史压成‘火车发明了时区’。"

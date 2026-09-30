@@ -1,0 +1,91 @@
+id: S01-no-recommendation
+version: "0.1"
+status: draft
+
+source_domain:
+  - technology
+  - society
+  - contemporary
+
+question:
+  surface: "如果平台取消推荐算法，互联网会不会更真实？"
+  core: "去掉个性化推荐，会消除平台对注意力的分配，还是只是把分配权转移到另一套规则？"
+  why_i_care: "它能把‘算法好不好’改写成更底层的‘注意力如何被分配’。"
+
+mechanism:
+  one_sentence_model: "当内容过剩而注意力稀缺时，总需要某种排序规则分配可见性；取消个性化推荐只会让其他筛选机制接管。"
+  actors:
+    - "用户"
+    - "创作者"
+    - "平台"
+    - "广告主与商家"
+    - "编辑、搜索、社交网络等替代中介"
+  forces:
+    - "注意力稀缺"
+    - "内容供给过剩"
+    - "搜索成本"
+    - "曝光竞争"
+    - "平台多目标优化"
+  feedback_loops:
+    - "展示 -> 互动 -> 数据 -> 后续展示机会"
+  evidence_status:
+    facts:
+      - "推荐与搜索被大型内容平台用于帮助用户导航大规模内容库。"
+      - "Google Drive Quick Access在其具体场景中显著降低了寻找文件的时间。"
+      - "推荐系统研究会同时考虑准确度、多样性、新颖性和偶遇性等不同目标。"
+    interpretations:
+      - "取消个性化推荐不会让注意力分配变成中性状态。"
+    hypotheses:
+      - "七天无个性化推荐会让用户更依赖订阅、搜索、外部社交和编辑选择。"
+
+creative_hypothesis:
+  operation: "Remove"
+  changed_rule: "七天内平台不得根据个人历史做预测排序，但保留搜索、订阅、类别、时间顺序和明确披露的编辑机制。"
+  why_this_reveals_the_mechanism: "拿走一种强中介后，可以观察注意力分配权和搜索成本转移到哪里。"
+
+world:
+  rule: "这是反事实实验，不是现实事实。"
+  invariant: "替代排序方式必须显式说明。"
+  forbidden_shortcuts:
+    - "不把时间顺序描述成中性"
+    - "不默认算法等于操控"
+    - "不把所有推荐系统混成同一种产品机制"
+
+human_stakes:
+  ordinary_life_change: "用户必须更主动寻找；创作者必须适应新的发现路径。"
+  who_adapts_first: "已有强订阅关系和外部社群的人。"
+  who_pays_cost: "需要发现新内容但不愿投入搜索时间的人，以及依赖平台发现的新创作者。"
+
+knowledge_payload:
+  child_layer:
+    - "东西太多时总要排序。"
+    - "按时间排列也是一种规则。"
+    - "自己找东西需要花时间。"
+  adult_layer:
+    - "核心问题是中介如何分配稀缺注意力。"
+    - "取消一种中介通常意味着另一种中介接管。"
+    - "效率、控制感、多样性和生态激励可能互相冲突。"
+  optional_afterword:
+    - "介绍推荐系统中的探索、多样性与冷启动概念。"
+
+expression:
+  primary_mode: "essay-explainer"
+  renderer_candidates:
+    - "article"
+    - "whiteboard"
+    - "minimal-line"
+    - "hybrid"
+  must_preserve:
+    - "无推荐不等于无排序"
+    - "至少三个参与者视角"
+    - "事实与反事实分层"
+    - "不做算法善恶裁决"
+  may_change:
+    - "七天的具体平台设定"
+    - "是否加入轻寓言角色"
+    - "媒介长度"
+
+creator_notes:
+  what_surprised_me: "真正稀缺的不是内容，而是首页位置、用户时间和第一次被看见的机会。"
+  what_i_am_not_sure_about: "不同平台如果真的关闭个性化推荐，用户和创作者行为会有多大差异。"
+  what_i_refuse_to_simplify: "不把问题写成‘算法控制我们’。"
