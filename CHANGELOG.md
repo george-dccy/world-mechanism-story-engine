@@ -5,7 +5,9 @@
 - 明确 GitHub 为引擎本体，Notion 为创作者驾驶舱。
 - 建立 Mechanism Explorer v0.1。
 - 建立 Creative Blueprint v0.1。
+- 明确 **Question-first / Spark-first 双入口**，保护“母题先于机制”的创造性，同时要求最终回到机制理解。
 - 明确输出媒介无关：视频、文章、漫画、演讲等共用 Blueprint。
 - 建立 Renderer 接口思想。
 - 将 A08《声音只能留在说话的地方》纳入第一批 Golden Case。
+- 新增 A08 Creative Blueprint YAML 样例。
 - 记录对 stickman-video-director 与 Simon Skills 的工程化吸收边界。

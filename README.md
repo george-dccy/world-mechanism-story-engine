@@ -4,37 +4,59 @@
 
 这个项目不是“一句话生成视频”的流水线，也不是一个固定的科普 Skill。它把人的问题意识、判断、好奇心和设计放在最上层，把模型作为研究、推演、创作与生产的放大器。
 
-## 核心链路
+## 两种入口，一条主线
+
+系统允许两种合法起点：
+
+### Question-first
+```text
+真实困惑 → Mechanism Explorer → 创意发散
+```
+
+### Spark-first
+```text
+有生命力的母题 → 创意发散 → Mechanism Explorer
+```
+
+两条路会汇合到：
 
 ```text
-Question
-  ↓
-Mechanism Explorer
-  ↓
-Research / Evidence
-  ↓
-Creative Hypothesis
-  ↓
-Creative Blueprint
-  ↓
-Story / Essay / Explanation
-  ↓
-Expression Router
-  ↓
+Mechanism ↔ Creative Exploration
+          ↓
+      Editorial Gate
+          ↓
+   Creative Blueprint
+          ↓
+   Research / Evidence
+          ↓
+ Story / Essay / Explanation
+          ↓
+   Expression Router
+          ↓
 Video / Article / Comic / Talk / Other
-  ↓
-Production + QA
-  ↓
-Retrospective
-  ↺ 回到问题与机制
+          ↓
+   Production + QA
+          ↓
+     Retrospective
+          ↺
 ```
 
 **先理解，再表达；先设计，再生产。**
 
+## 为什么允许双入口
+
+不是所有好内容都从“研究问题”开始。有时先出现的是一个本身就有生命的怪事、人物关系或世界规则。
+
+因此：
+- 不能让机制分析扼杀第一闪念；
+- 也不能让一个漂亮母题绕过理解世界这一层。
+
+Mechanism Explorer 与 Creative Exploration 是一个可往返的核心回路，而不是僵硬的单向流水线。
+
 ## 两个核心资产
 
 ### Mechanism Explorer
-不急着回答“这个题怎么做成内容”，而是持续追问表面现象背后的机制、力量、约束、反馈和反事实。
+持续追问表面现象背后的机制、力量、约束、反馈和反事实，目标是让作者对世界多理解一层。
 
 ### Creative Blueprint
 所有表达形式共享的“源代码”。一个成熟 Blueprint 应能被编译成视频、公众号文章、漫画、演讲、亲子讨论或其他作品，而不被某个媒介反向绑架。
@@ -43,6 +65,7 @@ Retrospective
 - `docs/`：项目哲学、架构、边界和人机协作方式
 - `engine/`：机制探索、Creative Blueprint、故事、研究、质量评审
 - `schemas/`：核心中间产物的机器可读结构
+- `examples/`：Blueprint 等真实样例
 - `renderers/`：表达编译器，而非内容核心
 - `skills/`：未来可执行 Agent / Skill
 - `tests/golden-cases/`：保护创作味道与核心原则的黄金案例
