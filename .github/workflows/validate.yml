@@ -1,0 +1,25 @@
+name: validate-engine
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install validation dependencies
+        run: pip install -r requirements-dev.txt
+
+      - name: Validate Creative Blueprints
+        run: python scripts/validate_blueprints.py
+
+      - name: Validate Mechanism Explorer Skill
+        run: python scripts/validate_skill.py
