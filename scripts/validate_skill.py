@@ -38,6 +38,20 @@ SKILLS = {
             "R — Fictional Rule",
         ],
     },
+    "wm-creative-director": {
+        "required": [
+            "references/candidate-template.md",
+            "tests/evals.md",
+        ],
+        "must_contain": [
+            "China-first, World-second",
+            "First Association Test",
+            "Truth Surprises",
+            "Audience Distance Test",
+            "Form Fit Test",
+            "Author Fit Test",
+        ],
+    },
 }
 
 

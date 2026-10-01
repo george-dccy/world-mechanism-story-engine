@@ -1,11 +1,20 @@
 id: S01-no-recommendation
-version: "0.3"
-status: review
+version: "0.4"
+status: approved
 
 source_domain:
   - technology
   - society
   - contemporary
+
+cultural_lens:
+  primary_context: "Chinese-language everyday internet experience"
+  secondary_context:
+    - "YouTube"
+    - "Netflix"
+    - "Google Research"
+  why_this_context: "主文不依赖外国平台人物或制度，使用中文读者熟悉的‘短视频/内容平台首页’作为日常入口；海外公开资料只用于验证推荐、订阅、搜索和多参与者机制。"
+  avoid_default_foreign_case: true
 
 question:
   surface: "如果推荐算法消失七天，互联网会不会更真实？"
@@ -31,10 +40,10 @@ mechanism:
     - "分配规则 -> 创作者适应 -> 内容供给变化 -> 新的分配结果"
   evidence_status:
     facts:
-      - "大型内容平台会用推荐和搜索帮助用户导航海量内容。"
-      - "YouTube当前同时存在个性化Home、Subscriptions和Search等不同发现机制。"
-      - "Google Research将现代推荐系统建模为用户、内容提供者、广告商等多参与者生态。"
-      - "推荐系统研究会同时关注准确度、多样性、新颖性和偶遇性等多个维度。"
+      - "现实大型内容产品会并存多种发现机制，例如个性化首页、订阅、搜索。"
+      - "推荐系统可以在特定任务中降低寻找成本。"
+      - "现代推荐生态包含用户、内容提供者、广告商等多个参与者。"
+      - "推荐系统研究会讨论准确度、多样性、新颖性和偶遇性等多个维度。"
     interpretations:
       - "无个性化推荐不等于无排序。"
       - "不同替代排序规则会重新分配搜索成本、曝光机会和控制权。"
@@ -44,8 +53,15 @@ mechanism:
 
 creative_hypothesis:
   operation: "Remove + Reader Choice"
+  entry_point: "首页只有十把椅子，个性化推荐被拿走以后由谁坐？"
+  surprise_source: "每个看似更自由的替代方案都会产生新的中介、成本和盲点。"
   changed_rule: "先拿走首页个性化预测排序，再让读者依次选择时间顺序、订阅、搜索、人工精选、热门榜等替代机制。"
   why_this_reveals_the_mechanism: "读者亲手更换排序规则，自己观察注意力分配权和成本如何迁移，而不是被作者直接告知结论。"
+  first_association_rejected:
+    - "算法让人上瘾"
+    - "信息茧房"
+    - "算法比你更懂你"
+    - "关掉算法就会更真实"
 
 world:
   rule: "这是思想实验，不是现实平台预测。"
@@ -68,7 +84,7 @@ content_progression:
   - "选择搜索：已知需求变强，未知兴趣变弱"
   - "选择人工编辑：判断更可见，但中介仍存在"
   - "选择热门榜：集体行为形成新的反馈回路"
-  - "现实检查：真实平台本来就在混用多种发现机制"
+  - "现实检查：真实产品本来就在混用多种发现机制"
   - "问题升级：不是要不要中介，而是谁筛、按什么目标筛、能否切换"
 
 knowledge_payload:
@@ -93,6 +109,7 @@ expression:
     - "hybrid"
   content_master: "content-masters/S01-homepage-ten-chairs.md"
   draft: "drafts/S01-homepage-ten-chairs-article.md"
+  evidence_pack: "examples/evidence-packs/S01-pass-b.yaml"
   must_preserve:
     - "首页十把椅子作为稀缺注意力的核心隐喻"
     - "只取消个性化预测排序，而非所有算法"
@@ -100,6 +117,7 @@ expression:
     - "user / creator / platform至少三方视角"
     - "事实与反事实分层"
     - "不做算法善恶总裁决"
+    - "让读者经历推理，而不是作者提前宣布机制"
   may_change:
     - "椅子数量"
     - "平台例子"
@@ -108,5 +126,6 @@ expression:
 
 creator_notes:
   what_surprised_me: "‘自己选择’并不是没有中介，它通常只是把筛选成本和权力转移到别处。"
-  what_i_am_not_sure_about: "文章最终需要多少真实平台案例，才能既扎实又不变成产品说明书。"
+  what_i_am_not_sure_about: "正式发布时是否需要加入中国平台的可核实公开案例；如果加入，必须单独研究。"
   what_i_refuse_to_simplify: "不把问题写成‘算法控制我们’或‘算法只是提高效率’。"
+  human_feedback: "文章内容被明确评价为惊艳、符合作者气质、让人想跟着思路读下去，可照此推进。"
