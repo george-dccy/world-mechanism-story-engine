@@ -1,5 +1,5 @@
 id: S01-no-recommendation
-version: "0.2"
+version: "0.3"
 status: review
 
 source_domain:
@@ -28,52 +28,60 @@ mechanism:
     - "多方目标与激励"
   feedback_loops:
     - "展示 -> 互动 -> 数据 -> 后续展示机会"
-    - "分配规则 -> 创作者适应 -> 内容供给形态变化 -> 新的分配结果"
+    - "分配规则 -> 创作者适应 -> 内容供给变化 -> 新的分配结果"
   evidence_status:
     facts:
-      - "Netflix把推荐与搜索描述为其内容发现核心能力，并以减少浏览和搜索时间为目标之一。"
-      - "Google Drive Quick Access在其具体产品场景中把寻找文件的时间约减半。"
-      - "Google Research指出现代推荐系统会耦合用户、内容提供者、广告商等多个参与者。"
+      - "大型内容平台会用推荐和搜索帮助用户导航海量内容。"
+      - "YouTube当前同时存在个性化Home、Subscriptions和Search等不同发现机制。"
+      - "Google Research将现代推荐系统建模为用户、内容提供者、广告商等多参与者生态。"
       - "推荐系统研究会同时关注准确度、多样性、新颖性和偶遇性等多个维度。"
-      - "cold-start是推荐系统中的真实问题，新内容常需要探索机制获得交互信号。"
     interpretations:
       - "无个性化推荐不等于无排序。"
       - "不同替代排序规则会重新分配搜索成本、曝光机会和控制权。"
     hypotheses:
-      - "创作者会根据替代规则改变发布时间、标题和外部社群策略。"
-      - "用户对控制感与搜索成本的感受会因使用习惯而显著不同。"
+      - "创作者会根据替代规则调整发布时间、标题或外部社群策略。"
+      - "用户对控制感与搜索成本的感受会因使用习惯而不同。"
 
 creative_hypothesis:
-  operation: "Remove + Branch"
-  changed_rule: "七天内禁止根据个人历史做首页个性化预测排序；保留主动订阅时间流、明确搜索、分类目录和标注清楚的人工编辑。热门榜单独作为分支。"
-  why_this_reveals_the_mechanism: "拿走一种强中介后，必须显式选择由谁接管首页，从而让注意力分配机制变得可见。"
+  operation: "Remove + Reader Choice"
+  changed_rule: "先拿走首页个性化预测排序，再让读者依次选择时间顺序、订阅、搜索、人工精选、热门榜等替代机制。"
+  why_this_reveals_the_mechanism: "读者亲手更换排序规则，自己观察注意力分配权和成本如何迁移，而不是被作者直接告知结论。"
 
 world:
-  rule: "这是反事实实验，不是现实预测。"
-  invariant: "每个分支必须明确替代排序方式，不能出现‘没有规则的首页’。"
+  rule: "这是思想实验，不是现实平台预测。"
+  invariant: "每一轮必须明确谁在排序，不能出现‘没有规则的首页’。"
   forbidden_shortcuts:
     - "不把时间顺序描述成中性"
     - "不默认算法等于操控"
     - "不把人工编辑描述成无偏见"
-    - "不把所有推荐系统混成同一种产品机制"
     - "不把假设行为写成已发生事实"
 
 human_stakes:
-  ordinary_life_change: "用户需要承担不同的寻找成本；创作者需要适应新的首次曝光路径。"
+  ordinary_life_change: "用户承担不同寻找成本；创作者面对不同首次曝光路径；平台把控制权放在不同机制上。"
   who_adapts_first: "已有强订阅关系、明确搜索意图或外部社群的人。"
   who_pays_cost: "没有明确搜索词的新用户、依赖平台发现的新内容，以及不愿投入寻找时间的人。"
 
+content_progression:
+  - "首页只有十把椅子，个性化推荐被拿走"
+  - "选择时间顺序：频率和发布时间成为新规则"
+  - "选择只看关注：过去的选择影响未来发现"
+  - "选择搜索：已知需求变强，未知兴趣变弱"
+  - "选择人工编辑：判断更可见，但中介仍存在"
+  - "选择热门榜：集体行为形成新的反馈回路"
+  - "现实检查：真实平台本来就在混用多种发现机制"
+  - "问题升级：不是要不要中介，而是谁筛、按什么目标筛、能否切换"
+
 knowledge_payload:
   child_layer:
-    - "东西太多时总要排序。"
-    - "按时间排也是一种规则。"
-    - "自己找东西通常需要花更多时间。"
+    - "东西太多时，总要有一种规则决定先看什么。"
+    - "按时间、按热门、老师挑、机器推荐，都是不同的排序办法。"
+    - "自己选择也常常需要花更多时间寻找。"
   adult_layer:
-    - "核心不是有没有中介，而是中介是谁、优化什么、权力是否可见和可控。"
+    - "核心不是有没有中介，而是中介是谁、优化什么、是否透明和可控。"
     - "效率、控制感、多样性、偶遇和生态激励可能互相冲突。"
-    - "取消一种分配机制常常只是让另一种机制接管。"
+    - "取消一种分配机制通常意味着另一种机制接管。"
   optional_afterword:
-    - "解释探索、冷启动、多样性和偶遇性等推荐系统概念。"
+    - "解释cold-start、exploration、diversity、serendipity。"
 
 expression:
   primary_mode: "interactive-essay-explainer"
@@ -83,20 +91,22 @@ expression:
     - "whiteboard"
     - "minimal-line"
     - "hybrid"
+  content_master: "content-masters/S01-homepage-ten-chairs.md"
+  draft: "drafts/S01-homepage-ten-chairs-article.md"
   must_preserve:
+    - "首页十把椅子作为稀缺注意力的核心隐喻"
     - "只取消个性化预测排序，而非所有算法"
     - "无推荐不等于无排序"
     - "user / creator / platform至少三方视角"
     - "事实与反事实分层"
     - "不做算法善恶总裁决"
-    - "高不确定推演使用分支而非确定时间线"
   may_change:
-    - "分支数量"
-    - "七天的叙事外壳"
+    - "椅子数量"
+    - "平台例子"
     - "是否最终实现互动网页"
     - "媒介长度"
 
 creator_notes:
-  what_surprised_me: "真正稀缺的不是内容，而是用户时间、首页位置和第一次被看见的机会。"
-  what_i_am_not_sure_about: "不同产品真的关闭个性化排序时，各群体会如何适应，需要实证才能回答。"
+  what_surprised_me: "‘自己选择’并不是没有中介，它通常只是把筛选成本和权力转移到别处。"
+  what_i_am_not_sure_about: "文章最终需要多少真实平台案例，才能既扎实又不变成产品说明书。"
   what_i_refuse_to_simplify: "不把问题写成‘算法控制我们’或‘算法只是提高效率’。"
