@@ -5,8 +5,7 @@ Golden Cases 用来保护“系统越来越自动，但作品不能越来越像�
 ## 当前基线
 
 ### A08｜声音只能留在说话的地方
-**Golden Case**  
-科学 / 寓言 / 关系故事
+**Golden Case**
 
 保护：
 - 母题先行；
@@ -15,8 +14,7 @@ Golden Cases 用来保护“系统越来越自动，但作品不能越来越像�
 - 儿童与成人双层阅读。
 
 ### S01｜首页只有十把椅子
-**Golden Case｜2026-10-01 人工认可**  
-当代社会 / 技术 / 思辨解释
+**Golden Case｜2026-10-01 人工认可**
 
 保护：
 - 非故事型内容也可以成为核心作品；
@@ -25,20 +23,30 @@ Golden Cases 用来保护“系统越来越自动，但作品不能越来越像�
 - 非二元价值判断；
 - 符合作者“跟着思路读下去”的写作气质。
 
-### H01｜北京时间为什么在西安产生？
-**Golden Candidate**  
-中国历史 / 科学 / 技术 / 制度
+### F01｜你连世界的一秒都活不完
+**Golden Candidate v0.1**
 
 正在测试：
-- China-first, World-second；
-- Truth Surprise；
-- 第一联想淘汰；
-- 历史题不必历史剧化；
-- 公共基础设施视角。
+- Wish Fulfillment Stress Test；
+- Cognitive Surprise > Knowledge Surprise；
+- 覆盖率 vs 连续性；
+- 如何讨论有限、遗憾和意义而不滑向“珍惜当下”鸡汤；
+- 思想实验是否能让读者自己改变问题。
 
-## Golden Candidate → Golden Case
+### H01｜标准时间 / 北京时间
+**Retired Case**
 
-必须同时有：
+它不再作为创作候选，但保留三轮失败用于回归：
+- 史实真实 ≠ 表达有效；
+- 第一联想正确 ≠ 值得做；
+- 冷知识惊讶 ≠ 认知惊讶；
+- 沉没成本不能成为继续创作的理由。
+
+详见 tests/retired/H01-standard-time.md。
+
+## Candidate → Golden Case
+
+必须同时满足：
 1. 真正跑过完整链路；
 2. 至少一份接近真实发布形态的产物；
 3. 作者明确人工反馈；

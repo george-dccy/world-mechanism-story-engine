@@ -1,0 +1,111 @@
+id: F01-world-second
+version: "0.1"
+status: review
+
+source_domain:
+  - culture
+  - society
+  - fable
+
+cultural_lens:
+  primary_context: "personal lived experience in Chinese-language context"
+  secondary_context:
+    - "global human experience"
+  why_this_context: "起点来自作者自己的生活感受；世界不同地方只作为‘未被我经历的其他生活’出现，不做异国风景展览。"
+  avoid_default_foreign_case: true
+
+question:
+  surface: "如果我能同时经历世界上同一秒发生的一切，会不会活得更充实？"
+  core: "人生的完整来自覆盖更多世界，还是来自一条有限但连续的经历链？"
+  why_i_care: "我曾把不能同时身处两个地方理解成遗憾，但也许正是这种有限让眼前这一份生活获得重量。"
+
+mechanism:
+  one_sentence_model: "有限的身体和注意力让人的经历只能沿一条路径发生，而经历之间的连续、选择与排除，可能比覆盖更多片段更能形成一个具体人生。"
+  actors:
+    - "一个想少错过世界的人"
+    - "他此刻正在经历的生活"
+    - "没有被他经历的其他可能"
+  forces:
+    - "有限注意力"
+    - "一个身体只能占据一个位置"
+    - "经历的时间连续性"
+    - "选择会排除其他可能"
+    - "记忆与关系依赖前后文"
+  feedback_loops:
+    - "越追求覆盖更多 -> 越需要压缩和筛选 -> 越依赖新的排除规则 -> 越显出‘全部拥有’本身不可能成为体验"
+  evidence_status:
+    facts: []
+    interpretations:
+      - "知道一件事和把它作为自身经历是不同层次。"
+      - "具体人生的意义可能部分来自经历之间的连续和路径依赖。"
+    hypotheses:
+      - "减少所有错过未必提高主观完整感。"
+      - "有限性可能是选择、期待、遗憾和珍惜能够成立的结构条件之一。"
+
+creative_hypothesis:
+  operation: "Wish Fulfillment Stress Test"
+  entry_point: "我不想错过世界。好，那就把世界同一秒发生的一切都给你。"
+  surprise_source: "读者自己的愿望在被完全满足后，逐步暴露出新的矛盾。"
+  changed_rule: "依次允许同时体验全部、逐个补看、AI总结、只选最精彩，观察每种方案如何重新引入选择与排除。"
+  why_this_reveals_the_mechanism: "不是作者宣布‘有限才有意义’，而是读者自己发现所有减少错过的方案都绕不开有限、筛选和连续性。"
+  first_association_rejected:
+    - "珍惜当下"
+    - "世界这么大我想去看看"
+    - "时区和同时性科普"
+    - "FOMO心理学"
+    - "世界各地同一秒的唯美蒙太奇"
+
+world:
+  rule: "思想实验允许把其他人的一段主观体验完整接入或回放给一个人。"
+  invariant: "每次技术升级都只解决上一层问题，不直接改变人的生命长度和连续性。"
+  forbidden_shortcuts:
+    - "不把多体验写成坏事"
+    - "不把有限写成道德优越"
+    - "不把AI总结说成没有价值"
+    - "不提前用鸡汤总结"
+
+content_progression:
+  - "我不想错过世界"
+  - "同时给你全部：一切都是前景时，体验反而失去对象"
+  - "一个个补看：你连世界的一秒都活不完"
+  - "AI总结：覆盖率上升，但知道没有自动变成经历"
+  - "只挑最精彩：谁定义精彩，为什么平凡片段反而可能对某个人重要"
+  - "认知转向：经历价值取决于它与前后生活发生什么关系"
+  - "问题升级：为什么把不属于自己路径的经验都计算成损失"
+  - "开放结尾：完整人生是否本来就不需要完整覆盖世界"
+
+knowledge_payload:
+  child_layer:
+    - "一个人不可能同时在所有地方。"
+    - "看到更多和真正经历更多不是完全一样的。"
+    - "一件普通的事，因为和自己的记忆、家人、朋友连在一起，也会很重要。"
+  adult_layer:
+    - "人生完整感可能更多依赖连续性而非覆盖率。"
+    - "选择的重量来自排除其他可能。"
+    - "遗憾未必只是缺陷，也可能是具体人生获得形状的代价。"
+  optional_afterword: []
+
+expression:
+  primary_mode: "philosophical-interactive-essay"
+  renderer_candidates:
+    - "article"
+    - "hybrid-video"
+    - "minimal-line"
+    - "parent-child-discussion"
+  must_preserve:
+    - "先满足‘不想错过’的愿望，不先反驳"
+    - "四次解决方案逐层失败但都不是稻草人"
+    - "覆盖率 vs 连续性"
+    - "不落到‘珍惜当下’口号"
+    - "最终仍保留开放判断"
+  may_change:
+    - "解决方案数量"
+    - "是否显式使用AI"
+    - "世界一秒的具体生活片段"
+    - "标题"
+
+creator_notes:
+  what_surprised_me: "如果把一秒的世界全部保存下来，一个人可能用一生也无法把这一秒活完。"
+  what_i_am_not_sure_about: "如何写到遗憾和意义时仍保持克制，不让哲学层变成自我感动。"
+  what_i_refuse_to_simplify: "不把它写成‘少看手机、活在当下’。"
+  human_feedback: "作者认可这一方向，认为临时试写让人边读边有感触，并明确要求继续推进。"

@@ -5,39 +5,29 @@
 ### wm-mechanism-explorer — v0.2
 认知层入口 Skill。
 
-负责：
-- operationalize 模糊问题；
-- 建 Question Ladder；
-- 生成 competing mechanism candidates；
-- 区分 F / I / H / R；
-- 建 Mechanism Map；
-- 用 consequence ladder 或 branching scenarios 做反事实；
-- 在生产前停止，把关键判断交还给作者。
+负责 operationalize、Question Ladder、competing mechanisms、F/I/H/R、Mechanism Map 和反事实。
 
 ### wm-research-agent — v0.1
 证据层 Skill。
 
-两种模式：
-- **Pass A｜Premise Check**：创意承诺前纠正前提、术语、日期和范围；
-- **Pass B｜Evidence Pack**：Blueprint 形成后建立 claim ledger、source ledger、Do Not Strengthen 与生产证据。
+- Pass A｜Premise Check
+- Pass B｜Evidence Pack
 
-### wm-creative-director — v0.1
+### wm-creative-director — v0.2
 创意方向 Skill。
 
-H01 / S01 人工反馈后新增，专门解决：
-- 正确但普通；
-- 美国案例默认化；
-- 历史题自动历史剧化；
-- 所有题都被强迫故事化。
-
-核心方法：
+当前核心规则：
 - China-first, World-second；
 - First Association Test；
-- Truth Surprise；
+- **Cognitive Surprise > Truth Surprise > Gimmick Surprise**；
+- **Wish Fulfillment Stress Test**；
 - Audience Distance；
 - Form Fit；
 - Author Fit；
 - KEEP / HOLD / REJECT。
+
+S01 和 F01 共同证明：
+> 很多有作者气质的内容，不是“找到一个更奇怪的事实”，而是先认真满足读者的直觉愿望，再让解决方案自己暴露隐藏机制。
 
 ## 下一批
 
