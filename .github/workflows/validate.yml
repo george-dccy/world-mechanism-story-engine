@@ -24,5 +24,8 @@ jobs:
       - name: Validate Evidence Packs
         run: python scripts/validate_evidence_packs.py
 
+      - name: Validate Video Concepts
+        run: python scripts/validate_video_concepts.py
+
       - name: Validate Skill contracts
         run: python scripts/validate_skill.py

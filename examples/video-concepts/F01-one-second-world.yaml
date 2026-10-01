@@ -1,0 +1,113 @@
+id: F01-one-second-world
+version: "0.1"
+status: concept
+source_blueprint: "examples/blueprints/F01-world-second.yaml"
+
+target_duration:
+  min_sec: 100
+  max_sec: 150
+
+core_cognitive_turn: "世界可以在同一参考时刻并行发生无数生活，但一个人的生命只能串行成为一条连续经历线；别处的完整不构成此处的残缺。"
+
+visual_argument: "先不断增加同一时刻的生活窗口，直到全部窗口都失去可观看性；再退回单一连续画面，让观众通过视觉和声音亲自感到：覆盖率提高并不等于体验变深。"
+
+recurring_motifs:
+  - "08:00:00 / 同一参考时间戳"
+  - "窗口 / 分屏"
+  - "一只普通杯子被放到桌面"
+  - "同一个人物继续往前走"
+
+sound_design:
+  principle: "声音从单一清晰 → 多轨叠加成不可辨认 → AI式摘要化 → 回到一个真实空间的环境声。"
+  avoid:
+    - "全程情绪化配乐"
+    - "用宏大音乐强迫感动"
+
+beats:
+  - id: B1
+    duration_sec: 15
+    visual_state: "单一中国城市早晨。一个普通成年人出门，08:00:00。阳光、早餐、校门、地铁口。"
+    audio_state: "清晰单一空间声：脚步、车流、杯盖、孩子说话。"
+    cognitive_function: "建立‘我的这一秒’。"
+    transition: "时间戳停在08:00:00，画面第一次一分为二。"
+
+  - id: B2
+    duration_sec: 18
+    visual_state: "2格→4格→8格→16格。另一些地方正是傍晚、午后、深夜。全部是普通生活，不做旅游明信片。"
+    audio_state: "每增加一格，就增加对应环境声。"
+    cognitive_function: "让世界的并行丰富变得可见。"
+    transition: "继续分屏到几十格，人物越来越小。"
+
+  - id: B3
+    duration_sec: 12
+    visual_state: "窗口增殖到几乎无法辨认，最终接近视觉噪声。"
+    audio_state: "所有空间声叠加成无法分辨的整体。"
+    cognitive_function: "Visual Proof：全部同时拥有并不等于全部被真正体验。"
+    transition: "突然静音，只留下一个窗口。"
+
+  - id: B4
+    duration_sec: 18
+    visual_state: "尝试逐个回放。窗口变成一条极长队列，不断滑过，但原人物自己的时间轴也在继续。"
+    audio_state: "一个个空间短暂清晰，又立即被下一个替代。"
+    cognitive_function: "逐个补看仍无法把世界的一秒变成自己的一秒。"
+    transition: "队列被压缩成AI摘要界面。"
+
+  - id: B5
+    duration_sec: 16
+    visual_state: "抽象AI摘要：日出、晚高峰、拥抱、奔跑等被快速归类，不使用真实品牌UI。"
+    audio_state: "干净、准确、去空间化的信息播报。"
+    cognitive_function: "知道更多，但空间感、关系和前后文消失。"
+    transition: "从‘最精彩’候选卡片切回一个极普通的小区入口。"
+
+  - id: B6
+    duration_sec: 22
+    visual_state: "普通人物每天经过的小区门口、饭桌、杯子。通过两三个极短的前后时态镜头，显示它们因重复和关系获得意义。"
+    audio_state: "恢复单一环境声；杯子放桌面的声音成为清晰前景。"
+    cognitive_function: "片段价值来自它嵌在谁的时间线里，而非全球精彩度。"
+    transition: "回到开场人物，时间从08:00:00跳到08:00:01。"
+
+  - id: B7
+    duration_sec: 18
+    visual_state: "原人物继续走。屏幕边缘可短暂闪现其他地方的生活，但不再分屏占据主体。"
+    audio_state: "主体空间声稳定，远处其他声音只作为极轻的层。"
+    cognitive_function: "别处仍完整存在，但无需进入我的画面才能成立。"
+    transition: "停在一个普通动作上，不做宏大远景。"
+
+  - id: B8
+    duration_sec: 12
+    visual_state: "一个普通早晨继续。无总结性蒙太奇。"
+    audio_state: "自然声，音乐只允许极轻进入。"
+    cognitive_function: "开放结束：世界并行，人生串行。"
+    transition: "黑场或停帧。"
+
+narration_policy:
+  style: "第一人称思考，不抢在画面前解释。"
+  rule: "当画面已经完成Visual Proof时，旁白不得重复说明同一结论。"
+
+text_policy:
+  allow:
+    - "08:00:00"
+    - "极少量章节词"
+  avoid:
+    - "大段哲学字幕"
+    - "世界各城市地名堆叠"
+    - "鸡汤式总结句"
+
+must_preserve:
+  - "分屏增殖到视觉失效，是核心视觉论证"
+  - "回到单一生活后，声音必须重新变得具体"
+  - "别处生活不是被否定，而是继续完整存在"
+  - "结尾不落到遗憾和缺失"
+  - "不做旅游宣传片式世界蒙太奇"
+
+renderer_handoff:
+  next:
+    - "Director Proposal"
+    - "Storyboard"
+    - "Asset Plan"
+    - "Audio Timeline"
+  locked:
+    - "core cognitive turn"
+    - "visual argument"
+    - "sound argument"
+    - "must_preserve"
