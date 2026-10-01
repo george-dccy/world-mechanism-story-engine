@@ -4,12 +4,6 @@
 
 这个项目不是“一句话生成视频”的流水线。人的问题意识、文化位置、判断与设计在上；模型的研究、推演、写作和生产能力在下。
 
-## 默认文化视角
-
-> **China-first, World-second｜中国视角为主，世界视角为辅。**
-
-但中国视角不是强制地点换皮。像 F01 这种来自个人生命体验、天然具有普遍性的母题，应保护其普遍性。
-
 ## 核心链路
 
 问题 / 母题  
@@ -19,7 +13,8 @@
 → Creative Blueprint  
 → Research Pass B / Evidence Pack  
 → Content Master  
-→ Expression Router  
+→ **Expression Concept（如 Video Concept）**  
+→ Renderer  
 → Production + QA  
 → Retrospective
 
@@ -33,14 +28,15 @@ Creative Director 当前优先级：
 
 > **Cognitive Surprise > Truth Surprise > Gimmick Surprise**
 
-并新增：
+以及：
 
-> **Wish Fulfillment Stress Test**  
-> 不急着反驳读者的愿望，先真正满足它，再观察解决方案自己产生什么新问题。
+> **Wish Fulfillment Stress Test**：不急着反驳读者的愿望，先真正满足它，再观察解决方案自己产生什么新问题。
 
 ## Authorial Voice
 
-当前两个强基准：
+项目保护：
+
+> **让读者经历机制，而不是听作者宣布机制。**
 
 ### S01
 “我不要推荐算法”  
@@ -48,20 +44,39 @@ Creative Director 当前优先级：
 → 问题从“算法好不好”升级为“谁筛、为什么筛、能否切换”。
 
 ### F01
-“我不想错过世界”  
-→ 同时体验全部 → 慢慢补看 → AI总结 → 只选最精彩  
-→ 问题从“我错过多少”升级为“什么才让一段经历成为我的人生”。
+“同一时刻世界有无数生活，我为什么只能经历这一份？”  
+→ 同时体验全部 → 逐个回放 → AI总结 → 只选最精彩  
+→ 最终从“覆盖更多世界”转向“世界并行，人生串行”。
 
-项目保护的是：
+F01 v0.2 进一步明确：
 
-> **让读者经历机制，而不是听作者宣布机制。**
+> **世界丰富度与个人生命完整度不是同一个指标。**
 
-## Golden Cases
+## Video Concept Layer
 
-- A08：科学 / 寓言 / 关系故事｜Golden Case
-- S01：当代社会 / 思辨解释｜Golden Case
-- F01：有限体验 / 连续性 / 人生机制｜Golden Candidate
-- H01：标准时间 / 北京时间｜Retired Case
+视频不再只是“文章 + 配画面”。
+
+Creative Blueprint / Content Master 之后新增 **Video Concept**，先定义：
+- Core Cognitive Turn；
+- Visual Argument；
+- Temporal Device；
+- Sound Argument；
+- Beat Map；
+- Must Preserve。
+
+目标是让画面和声音本身承担认知论证。
+
+F01 首个样例：
+> 分屏越分越多，直到所有生活都难以真正观看；随后突然只剩一个窗口，空间声重新清楚。
+
+这叫 **Visual Proof**。
+
+## Golden / Candidate / Retired
+
+- A08：Golden Case
+- S01：Golden Case
+- F01：Golden Candidate v0.2
+- H01：Retired Case
 
 ## 不变边界
 
@@ -73,3 +88,4 @@ Creative Director 当前优先级：
 6. AI 可以提出候选，但关键取舍保留给人。
 7. F / I / H / R 必须分层。
 8. 一个题可以被正式 Retire；沉没成本不是继续做的理由。
+9. Renderer 不能把 Content Master 降格成“旁白配图”，Video Concept 必须保护视觉论证。
