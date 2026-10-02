@@ -27,5 +27,8 @@ jobs:
       - name: Validate Video Concepts
         run: python scripts/validate_video_concepts.py
 
+      - name: Validate Director Proposals
+        run: python scripts/validate_director_proposals.py
+
       - name: Validate Skill contracts
         run: python scripts/validate_skill.py

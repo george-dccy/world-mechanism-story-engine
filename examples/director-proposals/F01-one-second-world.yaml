@@ -1,0 +1,158 @@
+id: F01-one-second-world-director
+version: "0.1"
+status: review
+source_video_concept: "examples/video-concepts/F01-one-second-world.yaml"
+
+production_thesis: "先让观众贪婪地看见更多，再让画面亲自证明‘更多’并没有变成‘我的经历’，最后用三个普通重复动作把时间从抽象流逝变成个人生活的前后文。"
+
+protagonist_strategy:
+  fixed_person: true
+  description: "一位30多岁的普通中国成年人，不强调职业与身份标签；日常、克制、没有广告感。"
+  camera_relationship: "多数时候不看镜头；像同行家人或安静观察者记录。"
+  continuity_lock:
+    - "同一人物"
+    - "同一住宅与通勤区域"
+    - "同一只日常杯子"
+    - "同一家早餐摊"
+  do_not_lock:
+    - "每天完全相同衣服"
+    - "刻意一致的表情"
+
+ordinary_anchors:
+  - id: cup-left
+    action: "早晨，家人顺手把杯子放到人物左手边。"
+    first_meaning: "普通生活动作，没有强调。"
+    later_meaning: "跨几个早晨重复后，成为这条时间线的个人纹理。"
+  - id: breakfast-usual
+    action: "楼下早餐摊的人问一句‘还是老样子？’"
+    first_meaning: "一句普通交易话。"
+    later_meaning: "观众意识到它依赖过去很多次相遇。"
+  - id: school-wave
+    action: "校门口一个很轻的挥手。"
+    first_meaning: "普通告别。"
+    later_meaning: "第二次出现时，因为已有前文而自然变重，但不煽情。"
+
+visual_grammar:
+  base_camera: "35–50mm自然观察；少量近景捕捉手、杯子、门把、餐袋等动作。"
+  world_windows: "分屏保持相同参考时间戳；窗口越多，单窗声画信息越少。"
+  time_text: "只使用08:00:00、08:00:01等极少数字，不显示大量城市名。"
+  montage_rule: "只有在证明‘并行世界’和‘高光筛选’时允许快速蒙太奇；人物自己的生活尽量保持连续和呼吸。"
+  beauty_rule: "普通生活优先于壮丽画面；任何漂亮镜头如果让视频变成旅行广告，应删。"
+
+sound_grammar:
+  start: "单一中国城市清晨空间声，声音有方向与距离。"
+  multiplication: "每新增一个窗口新增一条真实环境声，逐渐失去可分辨性。"
+  overload: "达到声学拥挤后突然切断。"
+  ai_summary: "声音变成干净、无空间感、信息密度高的摘要语音。"
+  return: "回到杯子落桌、塑料袋、脚步、早餐摊问话等具体近声。"
+  music: "前2/3尽量不用情绪音乐；后段可极轻进入，但不能承担结论。"
+
+sequences:
+  - id: S1
+    duration_sec: 18
+    cognitive_job: "建立一条具体的‘我的早晨’。"
+    visible_action: "杯子被放到左手边；出门；早餐摊；校门口挥手。"
+    shot_strategy: "4–5个正常生活镜头，不急切。"
+    audio_strategy: "完全真实空间声。"
+    end_state: "画面定格在08:00:00。"
+    transition: "画面一分为二。"
+
+  - id: S2
+    duration_sec: 18
+    cognitive_job: "展示同一参考时刻的世界并行。"
+    visible_action: "普通晚餐、回家、等车、雨中走路、室内收衣服等生活依次加入。"
+    shot_strategy: "2→4→8→16分屏；无地标。"
+    audio_strategy: "声音随窗口增加。"
+    end_state: "画面已接近无法选择观看对象。"
+    transition: "继续增殖。"
+
+  - id: S3
+    duration_sec: 10
+    cognitive_job: "完成第一层Visual Proof。"
+    visible_action: "64格以上，生活缩成运动纹理。"
+    shot_strategy: "后期合成主导。"
+    audio_strategy: "多轨叠成不可辨认。"
+    end_state: "全部拥有，却无法真正观看。"
+    transition: "突然静音，只留一个窗。"
+
+  - id: S4
+    duration_sec: 16
+    cognitive_job: "测试逐个补看。"
+    visible_action: "单窗清晰出现又滑走，形成几乎没有尽头的队列；旁边人物自己的时钟持续向前。"
+    shot_strategy: "窗口队列 + 简洁MG，不做复杂UI。"
+    audio_strategy: "每一窗短暂恢复具体声音，然后被下一窗截断。"
+    end_state: "‘世界一秒’尚未看完，人物自己的时间已经过去。"
+    transition: "队列被压缩。"
+
+  - id: S5
+    duration_sec: 14
+    cognitive_job: "区分知道与经历。"
+    visible_action: "AI式摘要把生活变成类别和短句。"
+    shot_strategy: "抽象信息层，不复制真实产品。"
+    audio_strategy: "无空间感、准确、快速的摘要声。"
+    end_state: "信息完整，人物关系消失。"
+    transition: "摘要选出‘最精彩瞬间’。"
+
+  - id: S6
+    duration_sec: 14
+    cognitive_job: "让‘精彩’标准暴露边界。"
+    visible_action: "快速高光：日落、赛场、重逢；随后硬切回一只普通杯子。"
+    shot_strategy: "前半快、后半突然慢。"
+    audio_strategy: "高光声快速切换，杯子落桌声单独留下。"
+    end_state: "一个普通动作成为新的注意中心。"
+    transition: "进入重复时间。"
+
+  - id: S7
+    duration_sec: 26
+    cognitive_job: "证明意义来自时间线前后文。"
+    visible_action: "三个不同普通早晨：杯子仍在左手边；早餐摊‘还是老样子？’；校门口同样的挥手第二次出现。"
+    shot_strategy: "使用相似机位，但季节、衣物、光线自然变化；不做煽情慢动作。"
+    audio_strategy: "具体生活声，保留停顿。"
+    end_state: "观众已自然拥有这些动作的前文。"
+    transition: "回到第一个早晨的08:00:00。"
+
+  - id: S8
+    duration_sec: 16
+    cognitive_job: "世界并行仍然存在，但不再与主体竞争。"
+    visible_action: "人物继续走；画面边缘短暂出现其他生活，不抢主画面。08:00:00跳到08:00:01。"
+    shot_strategy: "单一跟随镜头为主。"
+    audio_strategy: "主体空间声完整，其他世界只留下极轻层次。"
+    end_state: "人物进入下一秒。"
+    transition: "自然结束，不做总结蒙太奇。"
+
+asset_strategy:
+  live_or_ai_realism:
+    - "主体中国城市清晨"
+    - "杯子 / 早餐摊 / 校门口普通动作"
+  ai_generated_world_windows:
+    - "不同地点普通生活的同一参考时刻"
+  post_production:
+    - "分屏增殖"
+    - "窗口队列"
+    - "AI摘要抽象信息层"
+    - "时间戳"
+  avoid:
+    - "知名地标库存素材"
+    - "过度电影化CG地球"
+    - "真实平台UI复刻"
+
+production_risks:
+  - "世界窗口太漂亮，变成旅行蒙太奇"
+  - "普通锚点被拍得像商业广告"
+  - "家人关系过度具体，引出额外剧情"
+  - "后段用音乐强迫感动"
+  - "旁白重复解释Visual Proof"
+  - "分屏过密导致观众只觉得乱，而没有先经历‘想看更多’的欲望"
+
+locked:
+  - "先有一个完整普通早晨，再开始分屏"
+  - "分屏必须增殖到观看失效"
+  - "杯子左手边至少重复三次"
+  - "08:00:00→08:00:01作为结尾时间动作"
+  - "不落到遗憾 / 缺失 / 宿命"
+
+flexible:
+  - "主体性别年龄"
+  - "早餐摊是否替换为便利店熟人"
+  - "校门口挥手是否替换为其他长期重复关系动作"
+  - "总时长在110–145秒之间调整"
