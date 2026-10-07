@@ -1,188 +1,149 @@
 id: F01-one-second-world-director
-version: "0.2"
+version: "0.3"
 status: approved
 source_video_concept: "examples/video-concepts/F01-one-second-world.yaml"
 
-production_thesis: "先让观众主动想拥有更多世界，再让‘同时全部、逐个回放、AI总结、只选精彩’四种方案各自以不同动画语法真正成立并亲自失效；最后不靠杯子或其他象征物总结，而只用一个人从08:00:00连续走进08:00:01完成结论。"
+production_thesis: "把原有四层认知链保留完整，但全部改写成主角亲自测试异常能力的第一人称经历：正常生活→08:00:00冻结→同时全部→逐个进入上下文→AI总结→只选精彩→回到自己的08:00:00→08:00:01。表达形式更沉浸，思想不降级。"
 
 protagonist_strategy:
   fixed_person: true
-  description: "一位普通中国成年人，不强调职业与身份标签；日常、克制、没有广告感。"
-  camera_relationship: "多数时候不看镜头；像同行者或安静观察者记录。"
+  description: "一位普通中国成年人，不强调职业、阶层和家庭标签；观众通过身体线索和空间关系感到‘我就在这里’。"
+  camera_relationship: "embodied first person；优先主观/半主观镜头，以手、脚步、影子、反射、呼吸和视线转动建立身体，不做游戏式纯POV。"
   continuity_lock:
-    - "同一人物"
-    - "同一住宅与通勤区域"
-    - "开场与结尾是同一条实际路线"
-    - "主体运动方向在最终回归段保持连续"
+    - "开场、冻结、回归和08:00:01必须是同一地点、同一身体位置和同一未完成动作"
+    - "我的世界在异常期间保持08:00:00"
+    - "别人的生活有自己的前一秒与后一秒"
+    - "最终回归时视觉与声音都恢复到开场语法"
   do_not_lock:
     - "符号化道具"
-    - "为了证明观点刻意重复的生活动作"
-    - "过度具体的家庭关系剧情"
+    - "杯子或仪式性重复动作"
+    - "过度具体的职业/家庭剧情"
 
 visual_grammar:
-  base_camera: "主体生活使用35–50mm自然观察关系；连续段优先真实空间感，不追求广告式光影。"
-  world_windows: "分屏保持同一参考时间戳；前期窗口各自可读，后期才进入密集过载。"
-  style_rule: "多风格不是展览：每次风格变化必须对应一个认知任务或世界窗口。"
-  time_text: "只使用08:00:00、08:00:01和AI摘要段必需的极少文字。"
-  continuity_rule: "最终回到主体时，视觉复杂度、镜头切换频率和风格数量都必须骤降。"
-  beauty_rule: "普通生活优先于壮丽画面；漂亮镜头若让片子变成旅游广告，应删。"
+  base_style: "统一当代插画宇宙；色彩、人物造型、线条与材质由Style Bible统一。"
+  first_person: "镜头以身体和视线为轴；进入别人生活时可以短暂借入其感知位置，但必须让观众知道自己是临时进入，不是身份永久切换。"
+  world_windows: "所有并行世界保持统一风格，只改变生活内容、光线、空间和动作；窗口几何与时间系统由art-motion代码控制。"
+  context_dive: "进入一个人时允许把这一秒前后的片段沿时间轴展开，形成‘这一秒拖着上下文’的直观体验。"
+  information_phase: "AI摘要把同一视觉语言抽象成信息层，而不是切换成另一个品牌UI世界。"
+  return_rule: "越接近08:00:01，越删除窗口、UI、特效和剪辑；最终只剩一个具体空间。"
 
 sound_grammar:
-  start: "单一中国城市清晨空间声，声音有方向与距离。"
-  multiplication: "每新增一个窗口新增一条真实环境声；2–8格仍能辨认，16格以后才逐步拥挤。"
-  overload: "达到声学拥挤后突然切断。"
-  replay: "每个回放窗口短暂恢复具体声音，但很快被下一段截走。"
-  ai_summary: "声音变成干净、无空间感、信息密度高的摘要语音。"
-  highlights: "高光段只保留短促的现实声或风格音效，不使用连续煽情配乐把碎片粘成假连续。"
-  return: "08:00:00回到08:00:01时恢复完整主体声场。"
-  music: "前2/3尽量不用情绪音乐；后段可极轻进入，但不能承担结论。"
-
-art_motion_routing:
-  engine: "third_party/huashu-art-motion"
-  adapter: "renderers/art-motion"
-  principles:
-    - "先一帧风格测试，再写完整场景"
-    - "世界画布与相机分离，避免静态图片缩放感"
-    - "同一sequence原则上一种主动画语法"
-    - "每一幕至少有一个主动作和持续运动"
-    - "签名转场必须服务段落逻辑"
-    - "复杂人物使用生成帧/角色sprite，代码负责合成和镜头"
-    - "固定随机种子，保证可复验"
-  style_candidates:
-    ordinary_world:
-      - "24_hopper：普通空间、硬边日光、克制人物"
-      - "16_2026：当代扁平插画，适合代码动画与清晰动作"
-    parallel_windows:
-      - "17_ink：中国水墨写意"
-      - "28_monet：印象派水面/光"
-      - "24_hopper：现实主义静态空间"
-      - "16_2026：当代扁平"
-      - "14_8bit：像素世界，仅作为少量反差窗口"
-    highlights:
-      - "35_shinkai：日落/相遇类高光"
-      - "13_pop：夺冠/强情绪瞬间"
-      - "08_impressionism：短暂日常美感"
-      - "30_matisse：简洁关系动作"
-  explainer_grammar:
-    replay_queue: "long_scroll"
-    ai_summary: "t2_keynote_ui + restrained y5_kinetic_type"
-    final_return: "continuous camera; no explainer UI"
+  normal: "完整的第一人称城市声场。"
+  freeze: "外部世界骤静，只剩身体近声。"
+  simultaneous: "多个空间声从诱人到过载。"
+  context_dive: "一次只恢复一个人的完整空间声，并带出前后动作的声音连续性。"
+  ai_summary: "去空间化、干净、中心化。"
+  highlights: "每段有自己的局部声场，不用统一BGM假装连续。"
+  return: "我的街道声场逐步恢复，08:00:01时完全回来。"
 
 sequences:
   - id: S1
-    duration_sec: 15
-    cognitive_job: "建立一条具体、连续、可听清的‘我的早晨’。"
-    visible_action: "人物从住处附近进入一天：出门、街口、买早餐或经过早餐点、等灯、继续向前。08:00:00出现。"
-    shot_strategy: "3–4个正常生活镜头；先用现实感较强的一帧方案验证人物、空间、光线，避免商业短片感。"
-    audio_strategy: "完全真实空间声。"
-    end_state: "观众已经进入这个人的空间，08:00:00暂时停住。"
-    transition: "画面一分为二。"
+    duration_sec: 12
+    cognitive_job: "建立正常世界和主角真实问题。"
+    visible_action: "第一人称离开住处附近，经过早餐点或街口，进入普通通勤流。"
+    shot_strategy: "手、脚步、影子、玻璃反射与视线移动构成身体感；不追求电影广告感。"
+    audio_strategy: "一个完整、可定位的早晨声场；极少量第一人称自述提出问题。"
+    end_state: "观众相信这是‘我的’连续早晨。"
+    transition: "视线落在08:00:00。"
 
   - id: S2
-    duration_sec: 18
-    cognitive_job: "让‘同时拥有更多世界’先变成诱人的愿望。"
-    visible_action: "普通晚餐、回家、等车、雨中走路、收衣服、海边跑步等生活依次加入。不同窗口允许不同艺术语言。"
-    shot_strategy: "2→4→8→16分屏；前8格必须仍可看清每个窗口在做什么，不能一开始就制造混乱。"
-    audio_strategy: "声音随窗口增加，仍保留短暂可辨认阶段。"
-    end_state: "观众已经想看更多，但注意力开始被切碎。"
-    transition: "继续增殖。"
+    duration_sec: 8
+    cognitive_job: "让抽象问题变成异常能力。"
+    visible_action: "08:00:00冻结；所有外部运动停止，但我还能呼吸、转头和移动。另一个世界的声音与入口出现。"
+    shot_strategy: "同一空间直接冻结，不切宏大奇观镜头。"
+    audio_strategy: "城市声场突然抽空，只留身体近声与远处异空间声。"
+    end_state: "我可以测试‘同一秒别处正在发生什么’。"
+    transition: "进入第一个世界。"
 
   - id: S3
-    duration_sec: 10
-    cognitive_job: "完成‘全部同时拥有’的Visual Proof。"
-    visible_action: "64格以上，人物、光线、不同画风都缩成运动纹理。"
-    shot_strategy: "后期/代码合成主导；窗口内部仍在动，不允许只是静态缩略图。"
-    audio_strategy: "多轨叠成不可辨认。"
-    end_state: "信息覆盖率最高，实际体验最低。"
-    transition: "突然静音，只留一个窗口。"
+    duration_sec: 15
+    cognitive_job: "真诚满足同时拥有所有世界的愿望。"
+    visible_action: "一个生活变成2→4→8→16→64个同时运行的生活。"
+    shot_strategy: "前8格必须可读；统一当代插画Style Bible；H3 Lite可生成窗口内部自然动作，Codex负责分屏与时间。"
+    audio_strategy: "空间声随窗口增加，先丰富后失去前景。"
+    end_state: "全部同时存在，但没有任何一个能被真正持续经历。"
+    transition: "突然只剩一个世界。"
 
   - id: S4
     duration_sec: 17
-    cognitive_job: "真诚测试逐个补看。"
-    visible_action: "一个窗口被拉大进入，观看片刻后向侧面滑走；后方队列不断补入，逐渐形成没有尽头的长卷。"
-    shot_strategy: "复用huashu长卷骨架；相机只进不退，队列结构必须让‘还有更多’持续可见。"
-    audio_strategy: "每一段短暂恢复具体声场，然后被下一段截断。"
-    end_state: "单个片段终于能体验，但世界的一秒仍远未看完。"
-    transition: "整条长卷压缩进摘要界面。"
+    cognitive_job: "真诚测试逐个进入，并让上下文成为关键发现。"
+    visible_action: "进入孩子学骑车的一秒：父亲松手；短暂看到前面的练习/跌倒与下一秒继续骑行；退出后更多完整人生不断排入长卷。"
+    shot_strategy: "先沉浸一个具体上下文，再拉出为无尽队列；长卷是世界空间，不像UI列表。"
+    audio_strategy: "当前生活拥有完整声场；切到下一个时空间彻底改变。"
+    end_state: "一个瞬间只有接上它自己的前后时间才真正可理解，而世界的一秒无法补完。"
+    transition: "队列压缩为信息摘要。"
 
   - id: S5
-    duration_sec: 15
+    duration_sec: 14
     cognitive_job: "区分知道与经历。"
-    visible_action: "AI摘要将世界转成类别、数量、代表图、几句描述。"
-    shot_strategy: "t2 keynote UI为骨架，只在关键词重音处少量用y5动态文字；一屏一个焦点。"
-    audio_strategy: "无空间感、准确、快速的摘要声。"
-    end_state: "世界被描述得更完整，但具体生活空间消失。"
-    transition: "摘要提出‘只留下最值得体验的瞬间’。"
+    visible_action: "事件被快速归纳成类别、短句、代表画面。"
+    shot_strategy: "简洁信息语法，一屏一个焦点；不模仿真实AI产品。"
+    audio_strategy: "无空间感、高效率；只保留一句第一人称发现。"
+    end_state: "我知道得更多，但没有因此拥有那些生活的时间。"
+    transition: "系统建议只挑最值得体验的。"
 
   - id: S6
-    duration_sec: 15
-    cognitive_job: "让‘只选精彩’看起来真的很好，然后暴露它仍然只是碎片。"
-    visible_action: "求婚、夺冠、日落、重逢等4–6个高光，每个用不同艺术风格和签名转场快速成立；末尾同时缩成几张漂亮卡片。"
-    shot_strategy: "借鉴art-history speedrun机制，但只做短段；先主动作，再母题循环，再签名转场。"
-    audio_strategy: "每个高光有自己的短声场，最后全部消失，不人为混成一个连续故事。"
-    end_state: "眼前得到的是一组极好的片段，但它们彼此没有共同的昨天和下一秒。"
-    transition: "卡片向四周退去，露出开场人物。"
+    duration_sec: 14
+    cognitive_job: "真诚满足只选最好，再暴露高光仍然没有共同上下文。"
+    visible_action: "求婚、夺冠、日落、重逢、第一次看海等片段漂亮地成立，随后并列成互不相连的碎片。"
+    shot_strategy: "统一画风，不做风格速通；靠光线、构图、动作和节奏制造高光。"
+    audio_strategy: "每一段只拥有自己的局部声场，不铺一条连续煽情音乐。"
+    end_state: "它们都值得，但没有一段会自动接到我的昨天后面。"
+    transition: "碎片退去，露出冻结中的我的世界。"
 
   - id: S7
-    duration_sec: 24
-    cognitive_job: "不用象征物，直接把‘人生串行’拍成时间动作。"
-    visible_action: "开场人物继续原本的路线和动作，镜头沿一个方向连续跟随。08:00:00保持片刻后自然进入08:00:01。"
-    shot_strategy: "尽量使用一个连续世界画布和连续相机；可有极细的运动轨迹/时间线出现0.5–1秒，但不配解释字幕。"
-    audio_strategy: "恢复完整具体声场，并允许自然停顿。"
-    end_state: "观众看到的不是一个观点插图，而是一秒真的接到了下一秒。"
-    transition: "边缘短暂出现其他世界的视觉回声。"
+    duration_sec: 20
+    cognitive_job: "让‘别处完整不构成这里残缺’在第一人称中成立。"
+    visible_action: "我回到原来的位置；仍是08:00:00。别人的人生继续存在，但只以极轻视觉回声存在。"
+    shot_strategy: "回到S1的身体、机位、空间和未完成动作，不加入新象征。"
+    audio_strategy: "先只听见身体，再逐步找回自己的街道声场。"
+    end_state: "别处不是我被拿走的部分；我的时间线仍在等下一秒。"
+    transition: "冻结解除。"
 
   - id: S8
-    duration_sec: 12
-    cognitive_job: "让别处继续存在，同时结束价值竞争。"
-    visible_action: "主体继续走；橱窗反射、远窗、画面边缘可短暂闪过其他生活，但主画面不再分裂。"
-    shot_strategy: "单一跟随/观察镜头，不做总结蒙太奇。"
-    audio_strategy: "主体空间声完整；其他世界只留下极轻层次。"
-    end_state: "人物进入下一秒，世界也继续发生。"
-    transition: "自然结束。"
+    duration_sec: 8
+    cognitive_job: "用时间动作完成结论。"
+    visible_action: "完成刚才未完成的一步；08:00:00变成08:00:01。"
+    shot_strategy: "单一连续第一人称动作，不再解释，不增加视觉系统。"
+    audio_strategy: "具体空间声完整恢复；可完全没有结尾台词。"
+    end_state: "我的这一秒接到了我的下一秒，世界同时继续。"
+    transition: "普通动作中结束。"
 
 asset_strategy:
-  generated_character_frames:
-    - "开场/结尾固定人物"
-    - "少量需要人物特写的世界窗口"
-  code_drawn_worlds:
-    - "多风格普通生活窗口"
-    - "长卷队列"
-    - "AI摘要信息层"
-    - "高光风格速通"
-    - "时间戳与窗口系统"
-  audio:
-    - "主体清晨真实环境声"
-    - "6–10类可循环的世界环境声"
-    - "AI摘要声"
-    - "签名转场音效"
-  avoid:
-    - "知名地标库存素材"
-    - "过度电影化CG地球"
-    - "真实平台UI复刻"
-    - "为了证明观点而设计的杯子固定位置、仪式性重复动作"
+  style_bible: "优先建立一套统一当代插画人物、场景、线条、色彩、光线与运动标准。"
+  codex_art_motion:
+    - "全片时间线、窗口、冻结、长卷、信息层、合成、转场、音频cue和QA"
+    - "第一人称相机与最终08:00:00→08:00:01连续动作"
+  local_h3_lite:
+    - "在Style Bible锁定后，为普通生活窗口生成4–8秒自然人物/环境运动"
+    - "只作为有明确入点出点的素材后端，不掌管整片结构"
+  generated_stills:
+    - "角色/手部/反射等关键一致性参考"
+    - "Style Bible和复杂场景plate"
 
 production_risks:
-  - "多风格太好看，反客为主变成艺术史炫技"
-  - "世界窗口太漂亮，变成旅行蒙太奇"
-  - "开场主体人物过度电影化，失去普通生活可信度"
-  - "AI摘要段做得像产品发布会，抢走叙事主体"
-  - "高光段过长，让观众误以为作品在批判普通生活"
-  - "最后的时间线视觉符号太明显，变成说教图解"
-  - "旁白重复解释已经由画面完成的Visual Proof"
+  - "第一人称被做成游戏镜头而失去生活摄影感"
+  - "为了沉浸删掉四层认知链，导致思想变浅"
+  - "H3 Lite生成片段反过来决定剪辑结构"
+  - "世界窗口统一后变得太相似，缺少生活差异"
+  - "AI摘要段重新变成知识博主讲解"
+  - "结尾被改写成珍惜当下、平凡最珍贵或别羡慕别人"
+  - "在first rough cut前继续无限重写主题"
 
 locked:
-  - "先有一个完整普通早晨，再开始分屏"
-  - "分屏必须从可读逐步增殖到观看失效"
-  - "逐个回放必须使用可感到‘没有尽头’的空间结构"
-  - "AI总结和只选精彩都要先被真诚满足"
-  - "08:00:00→08:00:01是最终时间动作"
-  - "杯子左手边及其重复赋义逻辑从本片移除"
-  - "不落到遗憾 / 缺失 / 宿命 / 珍惜当下"
+  - "90–110秒Pilot目标"
+  - "第一人称体验，不做全程解释性旁白"
+  - "同时全部→逐个上下文→AI总结→只选精彩四层结构"
+  - "统一当代插画风作为首轮生产方向"
+  - "Codex/art-motion为主生产系统；H3 Lite是受控动态素材后端"
+  - "08:00:00冻结和08:00:01最终动作"
+  - "Content Master与核心认知链锁到first rough cut"
+  - "first rough cut前最多一次有证据的结构修改"
+  - "不落到遗憾、缺失、宿命、平凡最珍贵或珍惜当下"
 
 flexible:
-  - "主体性别年龄"
-  - "开场具体通勤动作"
-  - "并行窗口使用的具体4–6种艺术风格"
-  - "高光段使用的具体4–6种艺术风格"
-  - "总时长在105–135秒之间调整"
+  - "主人公性别年龄"
+  - "开场具体通勤动作和地点"
+  - "进入别人生活的具体3–8个例子"
+  - "极少量第一人称句子的具体措辞"
+  - "H3 Lite与纯代码资产的具体比例"
