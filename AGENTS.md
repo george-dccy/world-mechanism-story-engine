@@ -34,7 +34,11 @@ Its upstream engine is pinned at:
 
 The engine contains reusable art styles, animation grammars, long-scroll mechanics, camera systems, compositing, transitions and QA.
 
-### Style selection is deliberate, not maximal
+### Style selection is content-driven, deliberate, not maximal
+
+The project has **no universal house style** that every production should inherit.
+
+Read `docs/style-routing-principle.md` before locking a visual direction.
 
 A production may use:
 
@@ -42,15 +46,20 @@ A production may use:
 - **one style per major section**;
 - **different styles for simultaneously existing worlds**;
 - **a short multi-style speedrun**;
-- or a hybrid of art-motion code and generated character/image assets.
+- **realistic / photographic treatment**;
+- **collage / archive / whiteboard / diagrammatic / UI-led treatment**;
+- **Chinese ink or another culturally grounded visual language**;
+- or a hybrid of art-motion code and generated character/image/video assets.
+
+Never inherit a previous production's style merely because that pipeline already works.
 
 Never use every available style merely because it exists.
 
 For every chosen style, be able to answer:
 
-> What cognitive, spatial, temporal or emotional job does this style perform here?
+> What cognitive, spatial, temporal, dramatic or emotional job does this style perform for this specific content?
 
-If there is no answer, remove the style switch.
+If there is no answer, remove the style switch or choose a simpler visual system.
 
 Before inventing a renderer from scratch, inspect:
 
