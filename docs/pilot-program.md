@@ -13,6 +13,27 @@ For the first three films, the primary question is:
 
 > Can the World Mechanism Story Engine repeatedly turn different kinds of deep content into coherent 1–2 minute videos through a resumable Codex-first production workflow?
 
+## Global visual-routing rule
+
+The pilot program does **not** standardize one visual style across projects.
+
+Every production must choose its visual language from the approved creative idea, mechanism, dramatic structure, audience experience and production constraints.
+
+Before production, `wm-video-producer` should evaluate art-motion styles and grammars and recommend the best strategy for that specific film. Valid strategies include:
+
+- one unified style;
+- several sectional styles;
+- parallel styles shown at the same time;
+- realistic / photographic treatment;
+- Chinese ink or other culturally grounded visual languages;
+- collage / archival / whiteboard / diagrammatic / UI-led treatment;
+- mixed code-drawn and generated assets;
+- deliberately short multi-style passages.
+
+The style count may be **one or many**. Neither consistency nor variety is a virtue by itself.
+
+A visual choice is good when it helps the audience experience the mechanism, supports the content and remains producible. A prior pilot's style must never become the next project's default simply because the pipeline already supports it.
+
 ## Pilot 1 — F01
 
 **Case:** the world's simultaneous lives vs one person's serial experience.
@@ -27,9 +48,12 @@ For the first three films, the primary question is:
 
 **Production target:** 90–110 seconds.
 
+**F01-specific visual decision:**
+For the first F01 production pass, use a unified contemporary illustration universe so the experiment isolates changes in world count, context, information density, continuity and sound rather than using style variation as the proof. This is a case-specific decision, not a project default.
+
 **What it validates:**
 - Content Master → experiential video compilation;
-- unified illustration Style Bible;
+- a project-specific illustration Style Bible;
 - Codex/art-motion + bounded H3 Lite dynamic assets;
 - complex cognitive movement without lecture-style voice-over.
 
@@ -44,6 +68,9 @@ For the first three films, the primary question is:
 - interfaces and allocation mechanisms;
 - animated information;
 - changing rules rather than changing protagonists.
+
+**Visual routing:**
+Choose after Video Concept. It may be a single graphic language, UI-led motion, collage, sectional visual systems or another treatment if the mechanism benefits from it. Do not inherit F01's illustration style by default.
 
 **What it validates:**
 - art-motion explainer grammars;
@@ -60,6 +87,9 @@ For the first three films, the primary question is:
 - characters and relationships;
 - spatial sound as mechanism;
 - a fictional rule that remains emotionally concrete.
+
+**Visual routing:**
+Choose from the story and sound design. A08 may call for realism, stylized illustration, a culturally grounded art language or a hybrid. Its visual system should be independently justified and should not inherit either F01 or S01 merely for pipeline convenience.
 
 **What it validates:**
 - story-film production;
