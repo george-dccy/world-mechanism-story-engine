@@ -53,6 +53,19 @@ SKILLS = {
             "Author Fit Test",
         ],
     },
+    "wm-video-producer": {
+        "required": [
+            "references/production-continuation.md",
+            "tests/evals.md",
+        ],
+        "must_contain": [
+            "Codex-first",
+            "The correct number of styles is 1..N",
+            "Do not make a provider such as MiniMax H3 the default full-film renderer",
+            "Resume protocol",
+            "Production Manifest",
+        ],
+    },
 }
 
 def validate(name: str, spec: dict) -> list[str]:
