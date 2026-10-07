@@ -181,7 +181,31 @@ For KEEP:
 - exact cognitive turn;
 - Must Preserve;
 - research gap;
-- what only the human can approve.
+- what only the human can approve;
+- recommended medium / form;
+- continuation handoff.
+
+### Continuation handoff
+
+A KEEP is not automatically the end of the workflow.
+
+If the recommended medium includes video, output:
+
+```yaml
+continuation:
+  medium: video
+  next_stage: creative_blueprint_or_content_master
+  production_target: wm-video-producer
+  auto_continue_after_upstream_locks: true
+```
+
+Interpretation:
+- Creative Director still does not write the final film or production prompts;
+- Blueprint / Research / Content Master remain responsible for locking content;
+- once those locks exist, `wm-video-producer` should continue the project into Video Concept, Director Proposal, Production Manifest and production;
+- do not make the creator manually restart a new “now make the video” workflow when video was already selected.
+
+For non-video forms, point to the appropriate later-stage renderer/producer when available.
 
 ---
 
@@ -194,10 +218,11 @@ For KEEP:
 5. Optional Wish Fulfillment chain
 6. 3–5 candidates
 7. KEEP / HOLD / REJECT
-8. Recommended form
+8. Recommended form / medium
 9. Must Preserve
 10. Research gaps
 11. Status
+12. Continuation handoff for KEEP
 
 Do not write the finished artifact unless a later stage explicitly requests it.
 
@@ -216,6 +241,7 @@ Do not write the finished artifact unless a later stage explicitly requests it.
 - Premature moral lesson
 - Taste laundering
 - Premature polish
+- KEEP with no continuation path when the medium is already known
 
 ---
 
@@ -229,3 +255,4 @@ Do not write the finished artifact unless a later stage explicitly requests it.
 - Can the audience enter without studying first?
 - Is the chosen form cognitively appropriate?
 - Is final approval still human?
+- If the candidate is KEEP and video is selected, is the handoff to continued production explicit?
