@@ -1,0 +1,164 @@
+id: F01-world-second
+version: "0.1"
+status: motion_plan_ready
+medium: video
+
+sources:
+  creative_candidate: "F01 Golden Candidate v0.4"
+  blueprint: "examples/blueprints/F01-world-second.yaml"
+  evidence_pack: ""
+  content_master: "content-masters/F01-you-cant-live-a-second.md"
+  video_concept: "examples/video-concepts/F01-one-second-world.yaml"
+  director_proposal: "examples/director-proposals/F01-one-second-world.yaml"
+  motion_plan: "productions/F01-world-second/01-motion-plan.yaml"
+  production_design: "renderers/art-motion/F01-production-design.md"
+
+locks:
+  must_preserve:
+    - "世界并行，人生串行。"
+    - "逐个回放、AI总结、只选精彩都要先被真诚满足。"
+    - "最终Visual Proof是08:00:00自然进入08:00:01。"
+    - "别处生活继续完整存在，不与主体生活做价值竞争。"
+    - "结尾不落到遗憾、缺失、宿命或珍惜当下。"
+    - "不重新引入杯子左手边 / 酒店摸空 / 重复赋义支线。"
+  factual_constraints: []
+  creator_decisions:
+    - "art-motion能力进入后续整体视频生产流程。"
+    - "可使用一个或多个art-motion风格，不要求全用。"
+    - "Codex为主要生产者。"
+    - "MiniMax H3等生成式视频模型不作为整片主生产方式。"
+    - "创意确认后应有机制继续推进到视频生产，而不是停在创意文本。"
+
+renderer:
+  primary: "renderers/art-motion"
+  upstream: "third_party/huashu-art-motion"
+  production_mode: codex_first
+  style_count_strategy: parallel_world_styles
+  selected_styles:
+    - id: "24_hopper"
+      job: "ordinary spatial life / selected parallel windows"
+    - id: "17_ink"
+      job: "one parallel ordinary world with materially different visual language"
+    - id: "28_monet"
+      job: "moving light/water ordinary-world variation"
+    - id: "16_2026"
+      job: "clear code-driven contemporary actions and some generated-sprite integration"
+    - id: "14_8bit"
+      job: "small controlled contrast window only"
+    - id: "30_matisse"
+      job: "simple relational/highlight action"
+    - id: "35_shinkai"
+      job: "short curated-highlight passage"
+    - id: "13_pop"
+      job: "short high-energy curated-highlight passage"
+    - id: "18_klimt"
+      job: "optional short curated-highlight passage"
+  selected_grammars:
+    - "continuous_observational_scene"
+    - "multi_window_multi_style"
+    - "window_multiplication_sound_overload"
+    - "long_scroll_endless_queue"
+    - "t2_keynote_ui"
+    - "restrained_y5_kinetic_type"
+    - "short_art_style_speedrun"
+    - "single_world_continuous_camera"
+  selection_rationale:
+    - "多风格承担同一参考时刻不同生活并行存在的视觉论证，而不是展示风格数量。"
+    - "AI总结段切换为信息语法，强调知道更多但失去空间。"
+    - "结尾完全收回到单一连续世界，视觉复杂度越接近结论越低。"
+
+asset_policy:
+  generated_images:
+    allowed: true
+    uses:
+      - "固定主人物keyframes / sprites"
+      - "少量复杂人物动作"
+      - "需要更高人物风格忠实度的局部资产"
+  generated_video:
+    default: false
+    clips: []
+
+stages:
+  creative_gate:
+    state: passed
+    evidence: "KEEP / Golden Candidate v0.4"
+  blueprint:
+    state: passed
+  research_pass_b:
+    state: skipped
+    reason: "当前核心为哲学/体验结构，不依赖新增关键事实证明；若后续旁白加入事实性数字再补。"
+  content_master:
+    state: passed
+  video_concept:
+    state: passed
+  director_proposal:
+    state: passed
+  style_routing:
+    state: passed
+  keyframe_gate:
+    state: pending
+    candidates:
+      - "A_real_many_worlds_real"
+      - "B_unified_16_2026"
+      - "C_ink_digital_intrusion"
+    selected: ""
+  prototype_gate:
+    state: pending
+    prototypes:
+      - "S2_world_open_2_to_8"
+      - "S4_long_scroll_replay"
+      - "S7_080000_to_080001"
+  narration_timing:
+    state: pending
+    narration_file: ""
+    words_file: ""
+  rough_cut:
+    state: pending
+    latest: ""
+  qa_review:
+    state: pending
+    latest_log: ""
+  release_gate:
+    state: pending
+    candidate: ""
+  retrospective:
+    state: pending
+
+codex:
+  current_goal: "完成Gate 1视觉方向与Gate 2三个最小运动原型，验证整支片的核心生产语言。"
+  completed_tasks:
+    - "F01 v0.4 Content Master锁定"
+    - "Video Concept v0.2 approved"
+    - "Director Proposal v0.2 approved"
+    - "art-motion renderer integrated and upstream pinned"
+    - "126-second Motion Plan drafted"
+  next_actions:
+    - "读取AGENTS.md、art-motion上游风格索引和F01 Production Design。"
+    - "为同一08:00:00代表场景制作A/B/C三张lookdev keyframe；不要先做整片。"
+    - "在选定方向后实现S2 2→4→8窗口原型，验证不同风格在统一窗口系统内的兼容性。"
+    - "实现S4 long-scroll 5–8秒原型，优先复用上游long_scroll骨架。"
+    - "实现S7 08:00:00→08:00:01 6–10秒原型，以连续镜头和声场回归为核心。"
+    - "把原型输出、代码位置、QA结果回写本manifest。"
+  blockers: []
+  reusable_engine_changes:
+    - "如多风格窗口需要统一接口，将能力放入renderers/art-motion共享层，不写死在F01。"
+    - "如long-scroll需要通用队列模式，扩展上游适配层而非复制大块代码。"
+
+renders:
+  stills: []
+  prototypes: []
+  rough_cuts: []
+  release_candidates: []
+
+qa:
+  upstream_qa_run: false
+  subtitle_zone_checked: false
+  independent_review_complete: false
+  open_findings: []
+  resolved_findings: []
+
+resume_instruction: >-
+  Read AGENTS.md and this manifest first, then the linked Content Master, Video Concept,
+  Director Proposal, Production Design and Motion Plan. Continue from codex.next_actions.
+  Do not reopen the cup/repetition thesis and do not restart creative exploration unless
+  a prototype exposes a logged upstream concept failure.
