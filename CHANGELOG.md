@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.7 — 2026-10-07
+- 新增根目录 `AGENTS.md`，把项目级生产规约直接交给 Codex：默认 `understand → design → compile → code → render → inspect → revise`，而不是整片 prompt-to-video。
+- 新增 `wm-video-producer`：当 Creative Gate 为 KEEP 且媒介包含视频时，从 Content Master / Video Concept 继续推进到 Production Manifest、art-motion Routing、Motion Plan、Keyframe/Prototype、Timing、Rough Cut、QA 和 Release Candidate。
+- 新增 Production Orchestrator 与 `productions/<id>/production.yaml` 状态机，保存上游锁定项、当前 stage、风格/语法路由、资产来源、Codex `next_actions`、render 与 QA，使新的 Codex 会话可直接续跑。
+- 新增 `video-production.schema.json` 与 CI validator，正式把 Production Manifest 纳入可测试系统资产。
+- 全局视频生产策略升级为 **Codex-first**：代码负责场景、相机、节奏、转场、UI、分屏、长卷、合成、音频 cue、渲染与 QA；图片生成主要作为人物/sprite/纹理等资产来源。
+- MiniMax H3 等生成式视频模型降级为**可选、可替换的特殊镜头资产**，不作为默认整片生产引擎；若使用必须记录理由、来源、设置与替换边界。
+- art-motion 成为默认视频生产底座，但风格数量不设配额：每支片先评估完整风格/语法库，最后可以只用一个风格，也可以按章节、并行世界或短 speedrun 使用多个风格；每次风格变化必须有认知/空间/时间功能。
+- F01 新增正式 `production.yaml`，当前 stage 为 `motion_plan_ready`，下一步锁定为 A/B/C lookdev 与 S2/S4/S7 三个最小运动原型。
+
 ## v0.6 — 2026-10-07
 - F01 升级为 v0.4：删除“杯子固定放在左手边 → 酒店摸空 → 重复赋义”的支线，不再额外证明“普通事物因重复获得意义”。
 - F01 核心重新收束为：**世界并行，人生串行；时间让第一人称经验只能从这一刻进入下一刻。**
