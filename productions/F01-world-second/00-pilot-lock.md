@@ -14,10 +14,12 @@ with limited manual re-planning.
 
 - Duration: **90–110 seconds**
 - Form: **embodied first person**
-- Visual direction: **unified contemporary illustration**
+- Visual direction for this pilot: **unified contemporary illustration**
 - Main production system: **Codex + art-motion**
 - Optional local dynamic-asset backend: **MiniMax H3 Lite**
 - Immediate milestone: **first rough cut**
+
+> **Scope note:** the unified contemporary illustration choice is a production decision for F01 only. It is not a project-wide default and must not be inherited by later films without a new style-routing decision.
 
 ## What is locked
 
@@ -96,7 +98,7 @@ Speech should be sparse. Visual Proof beats should be allowed to operate without
 
 ## Visual system
 
-For this pilot, style variation is not the cognitive proof.
+For **F01 specifically**, style variation is not the primary cognitive proof.
 
 Use one unified contemporary illustration universe and let the following change instead:
 - number of worlds;
@@ -106,7 +108,19 @@ Use one unified contemporary illustration universe and let the following change 
 - window grammar;
 - continuity.
 
-This makes the film a cleaner test of the mechanism and is compatible with economical local generation.
+This makes this particular pilot a cleaner test of the mechanism and is compatible with economical local generation.
+
+This is **not** a reusable default for later productions. Every new film must return to `wm-video-producer` style routing and choose its visual strategy from the content itself. Valid future choices include, among others:
+- one consistent style;
+- several sectional styles;
+- simultaneous parallel-world styles;
+- live-action / realistic treatment;
+- collage / archive / whiteboard / information graphics;
+- Chinese ink or other culturally specific visual languages;
+- mixed code-drawn and generated media;
+- short deliberate style-speedrun passages.
+
+A later production should inherit F01's style only if its own cognitive and dramatic needs independently justify it.
 
 ## H3 Lite boundary
 
