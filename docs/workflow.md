@@ -1,4 +1,4 @@
-# Human–AI Workflow v0.2
+# Human–AI Workflow v0.3
 
 ## Stage 0 — Capture
 记录一个真正让人想追问的东西，或者一个突然出现的有生命力母题。
@@ -96,7 +96,7 @@ Focused Mode 重点检查：
 ### Story / Fable
 检查：
 - 外部任务；
-- 重复动作改义；
+- 重复动作改义（仅在该作品确实需要时，不作为固定模板）；
 - 状态变化；
 - 人物自主性；
 - 去寓意后是否仍值得看。
@@ -115,17 +115,21 @@ Focused Mode 重点检查：
 - 反方解释；
 - 结论是否超过证据。
 
+输出：`KEEP / HOLD / REJECT`。
+
+**只有 KEEP 才进入持续生产链。**
+
 ## Stage 7 — Creative Blueprint
 
 把问题、机制、规则、人/系统、任务或阅读推进、知识载荷、开放问题和 Must Preserve 统一到媒介无关对象。
 
-**没有 Blueprint，不进入生产。**
+**没有 Blueprint，不进入正式生产。**
 
 Blueprint 可以没有 story 字段，前提是它明确自己的 primary mode。
 
 ## Stage 8 — Research Pass B
 
-Blueprint 形成后再做完整 Evidence Pack：
+Blueprint 形成后再做完整 Evidence Pack（若事实依赖题需要）：
 
 - claim ledger；
 - 原始来源；
@@ -138,30 +142,129 @@ Blueprint 形成后再做完整 Evidence Pack：
 
 Research Pass B 可以修正 Blueprint 的事实层，但不能偷偷重写已确认的创作核心。
 
-## Stage 9 — Content Design
+## Stage 9 — Content Master
 
-选择：
-- story；
-- essay；
-- investigation；
-- explainer；
-- dialogue；
-- fable；
-- mixed。
+形成媒介无关的内容母版，锁定：
+- 核心认知转折；
+- 结构；
+- 必须保留的句子 / 情节 / 事实；
+- 不希望作品滑向的解释；
+- 可压缩、可改写与不可改写部分。
 
-这里才决定节奏和篇幅，不固定套爆款模板。
+这里不是最终脚本，也不是镜头表。
 
 ## Stage 10 — Expression Routing
+
 根据内容判断媒介，而不是根据“当前最强模型”判断。
 
-## Stage 11 — Production
-生产层可以最大限度自动化，但锁定：
-- 已确认 Blueprint；
-- 已确认事实口径；
-- 已确认核心情绪 / 观点；
-- 不可被工具修改的内容。
+如果选择视频，继续生成：
 
-## Stage 12 — Retrospective
+1. `Video Concept`：画面、运动和声音怎样亲自完成论证；
+2. `Director Proposal`：人物、镜头、声音、Sequence、资产和风险；
+3. 初始化 `Production Manifest`。
+
+**视频表达一旦确定，不应停在创意文档等待下一次人工重新启动。**
+
+## Stage 11 — Video Production Continuation
+
+视频项目默认由 `wm-video-producer` + `Production Orchestrator` 接管。
+
+状态链：
+
+```text
+KEEP
+→ Blueprint
+→ Content Master
+→ Video Concept
+→ Director Proposal
+→ Production Manifest
+→ art-motion Routing
+→ Motion Plan
+→ Keyframe Gate
+→ Prototype Gate
+→ Narration / Timing
+→ Rough Cut
+→ QA / Revision
+→ Release Candidate
+```
+
+除真正需要作者判断的 Gate 外，完成一个阶段后应继续生成下一个可机械推导的产物，不以“创意已经给出”作为结束条件。
+
+## Stage 12 — art-motion Routing + Codex Production
+
+### 默认视频底座
+
+所有新视频首先评估：
+
+`renderers/art-motion/` + `third_party/huashu-art-motion`
+
+不是要求把所有风格都用一遍，而是从完整能力库中做选择。
+
+可选策略：
+- `single_style`：全片一个风格；
+- `sectional_styles`：少量风格对应不同章节；
+- `parallel_world_styles`：不同世界/视角并存不同风格；
+- `speedrun_styles`：短段快速跨风格；
+- `hybrid_assets`：代码世界 + 生成人物/图像资产。
+
+每个风格必须能回答：
+> 它在这里承担什么认知、空间、时间或情绪功能？
+
+不能只因为“好看”而换风格。
+
+### 默认生产者：Codex
+
+Codex / coding agent 负责主生产图：
+- 场景代码；
+- 相机；
+- 动画；
+- 转场；
+- 排版；
+- 分屏 / 长卷 / 图表 / UI；
+- 角色与图片资产合成；
+- 音频 cue；
+- FFmpeg / Playwright 渲染；
+- QA 与回归。
+
+图片生成是资产来源。
+
+MiniMax H3 等生成式视频模型只作为**可替换的特殊镜头资产**，不作为整支片默认主引擎。只有代码 + 图像/sprite 明显不适合某个有机运动镜头时才使用，并记录原因、模型、参数和替换边界。
+
+## Stage 13 — Production Gates
+
+### Direction Gate
+视觉方向真正开放时，先做 2–3 个同一代表时刻的 keyframe / lookdev，再选方向。
+
+### Prototype Gate
+先验证 1–3 个最难、最关键的运动机制，再做整片。
+
+### Rough-cut Gate
+先形成端到端 rough cut，检查逻辑、节奏、视觉论证、声音论证和连续性，再做高成本精修。
+
+### Release Gate
+最终 Release Candidate 必须由人确认。
+
+Routine engineering decision 不新增人工 Gate。
+
+## Stage 14 — QA + Revision Loop
+
+验收维度：
+- Mechanism QA；
+- Motion QA；
+- Style QA；
+- Camera / framing QA；
+- Audio QA；
+- Continuity QA；
+- Subtitle safe-zone；
+- Independent Review。
+
+问题统一记录：
+
+> timecode → symptom → root cause → change → recheck
+
+同类问题两种修法仍失败时，向上判断是 asset / renderer / motion plan / director / concept / content 哪一层出错，不在下游无限抛光。
+
+## Stage 15 — Release + Retrospective
 
 1. 做之前怎么理解？
 2. Pass A / Pass B 分别纠正了什么？
@@ -169,4 +272,20 @@ Research Pass B 可以修正 Blueprint 的事实层，但不能偷偷重写已�
 4. 为了好看牺牲了什么？
 5. 哪个观众反应暴露了新问题？
 6. 哪个机制值得进入机制库？
-7. 哪条规则只是这个案例特例，不应泛化？
+7. 哪条生产能力值得回流 art-motion adapter / engine？
+8. 哪条规则只是这个案例特例，不应泛化？
+
+## Resume Rule
+
+任何新的 Codex / Agent 会话处理已有视频项目时，先读：
+
+1. `productions/<id>/production.yaml`
+2. Content Master
+3. Video Concept
+4. Director Proposal
+5. Motion Plan
+6. 最新 QA log
+
+然后直接执行 manifest 中的 `codex.next_actions`。
+
+**不要因为聊天上下文消失而重做创意阶段。**
