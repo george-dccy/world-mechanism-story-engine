@@ -1,84 +1,100 @@
 id: F01-one-second-world
-version: "0.1"
-status: concept
+version: "0.2"
+status: approved
 source_blueprint: "examples/blueprints/F01-world-second.yaml"
 
 target_duration:
-  min_sec: 100
-  max_sec: 150
+  min_sec: 105
+  max_sec: 135
 
 core_cognitive_turn: "世界可以在同一参考时刻并行发生无数生活，但一个人的生命只能串行成为一条连续经历线；别处的完整不构成此处的残缺。"
 
-visual_argument: "先不断增加同一时刻的生活窗口，直到全部窗口都失去可观看性；再退回单一连续画面，让观众通过视觉和声音亲自感到：覆盖率提高并不等于体验变深。"
+visual_argument: "先诱发‘我想看见更多世界’的欲望，再让分屏过载、无限回放、AI摘要和精彩筛选四种升级方案依次失效；最后不是靠一个象征性物件解释，而是让所有碎片退场，只留下一个人物从08:00:00走进08:00:01的连续运动。"
 
 recurring_motifs:
   - "08:00:00 / 同一参考时间戳"
   - "窗口 / 分屏"
-  - "一只普通杯子被放到桌面"
-  - "同一个人物继续往前走"
+  - "不同世界的不同视觉语言"
+  - "一位人物沿自己的方向持续向前"
+  - "08:00:00 → 08:00:01"
 
 sound_design:
-  principle: "声音从单一清晰 → 多轨叠加成不可辨认 → AI式摘要化 → 回到一个真实空间的环境声。"
+  principle: "声音从单一清晰 → 多空间叠加 → 逐个切换 → 摘要化去空间 → 高光快切 → 回到一个真实空间的完整声场。"
   avoid:
     - "全程情绪化配乐"
-    - "用宏大音乐强迫感动"
+    - "宏大音乐强迫感动"
+    - "用煽情音效替代认知转折"
+
+motion_strategy:
+  renderer: "art-motion"
+  upstream: "third_party/huashu-art-motion"
+  rule: "每个beat按cognitive job选择动画语法；风格变化必须承担认知功能，不做画风展览。"
+  grammar_map:
+    B1: "continuous observational scene"
+    B2: "multi-window / multi-style worlds"
+    B3: "window multiplication + sound overload"
+    B4: "long-scroll / endless replay queue"
+    B5: "keynote UI + restrained kinetic type"
+    B6: "short art-style speedrun"
+    B7: "collapse to one continuous world + camera follow"
+    B8: "single-world coda"
 
 beats:
   - id: B1
     duration_sec: 15
-    visual_state: "单一中国城市早晨。一个普通成年人出门，08:00:00。阳光、早餐、校门、地铁口。"
-    audio_state: "清晰单一空间声：脚步、车流、杯盖、孩子说话。"
-    cognitive_function: "建立‘我的这一秒’。"
-    transition: "时间戳停在08:00:00，画面第一次一分为二。"
+    visual_state: "单一中国城市早晨。一个普通成年人从家附近进入一天：街口、早餐、等灯、通勤。08:00:00只出现一次，不建立额外家庭剧情。"
+    audio_state: "清晰单一空间声：脚步、车流、塑料袋、远处人声。"
+    cognitive_function: "先让观众拥有一条具体、可连续观看的‘我的这一秒’。"
+    transition: "08:00:00暂时停住，画面第一次一分为二。"
 
   - id: B2
     duration_sec: 18
-    visual_state: "2格→4格→8格→16格。另一些地方正是傍晚、午后、深夜。全部是普通生活，不做旅游明信片。"
-    audio_state: "每增加一格，就增加对应环境声。"
-    cognitive_function: "让世界的并行丰富变得可见。"
-    transition: "继续分屏到几十格，人物越来越小。"
+    visual_state: "2格→4格→8格→16格。不同地方正在经历普通的傍晚、午后、深夜、雨天、室内生活。窗口可采用不同艺术语言，但全部共享同一参考时刻，不出现地标明信片。"
+    audio_state: "每增加一格，就增加对应环境声；前几格仍能听清。"
+    cognitive_function: "把世界的并行丰富变得诱人而可见，让观众先真的想要更多。"
+    transition: "窗口继续增殖，单窗越来越小。"
 
   - id: B3
-    duration_sec: 12
-    visual_state: "窗口增殖到几乎无法辨认，最终接近视觉噪声。"
-    audio_state: "所有空间声叠加成无法分辨的整体。"
-    cognitive_function: "Visual Proof：全部同时拥有并不等于全部被真正体验。"
+    duration_sec: 10
+    visual_state: "窗口增殖到64格以上；不同画风和运动一起缩成密集纹理，单个生活无法被持续观看。"
+    audio_state: "所有空间声叠成无法分辨的整体。"
+    cognitive_function: "第一层Visual Proof：全部同时拥有，不等于全部被体验。"
     transition: "突然静音，只留下一个窗口。"
 
   - id: B4
-    duration_sec: 18
-    visual_state: "尝试逐个回放。窗口变成一条极长队列，不断滑过，但原人物自己的时间轴也在继续。"
-    audio_state: "一个个空间短暂清晰，又立即被下一个替代。"
-    cognitive_function: "逐个补看仍无法把世界的一秒变成自己的一秒。"
-    transition: "队列被压缩成AI摘要界面。"
+    duration_sec: 17
+    visual_state: "尝试逐个回放。生活片段变成一条近乎无限的长卷/队列，一段被放大观看时，更多片段仍不断在后方排入；主体自己的时间指示仍继续向前。"
+    audio_state: "一个空间短暂清晰，又被下一个空间切走。"
+    cognitive_function: "第二层Visual Proof：串行补看能提高理解，但无法把世界的一秒完整装进一个人的时间。"
+    transition: "长卷快速压缩成摘要层。"
 
   - id: B5
-    duration_sec: 16
-    visual_state: "抽象AI摘要：日出、晚高峰、拥抱、奔跑等被快速归类，不使用真实品牌UI。"
-    audio_state: "干净、准确、去空间化的信息播报。"
-    cognitive_function: "知道更多，但空间感、关系和前后文消失。"
-    transition: "从‘最精彩’候选卡片切回一个极普通的小区入口。"
+    duration_sec: 15
+    visual_state: "AI式摘要把生活变成简洁类别、数字、短句和少量代表画面；不复制任何真实产品UI。"
+    audio_state: "干净、快速、无方向感的摘要语音；真实环境声几乎消失。"
+    cognitive_function: "区分‘知道更多’与‘在其中经历’。"
+    transition: "摘要界面提出：只保留最值得体验的瞬间。"
 
   - id: B6
-    duration_sec: 22
-    visual_state: "普通人物每天经过的小区门口、饭桌、杯子。通过两三个极短的前后时态镜头，显示它们因重复和关系获得意义。"
-    audio_state: "恢复单一环境声；杯子放桌面的声音成为清晰前景。"
-    cognitive_function: "片段价值来自它嵌在谁的时间线里，而非全球精彩度。"
-    transition: "回到开场人物，时间从08:00:00跳到08:00:01。"
+    duration_sec: 15
+    visual_state: "求婚、夺冠、日落、重逢等少量高光以极短的风格速通出现，每个高光使用明显不同的视觉语言与签名转场；随后这些画面缩成一组漂亮但互不连续的碎片。"
+    audio_state: "高光声快速、准确地切换，不堆砌煽情音乐。最后突然没有一个稳定空间声场。"
+    cognitive_function: "第三层Visual Proof：筛选标准再优秀，也只能得到更好的片段，不能把别人的片段拼成我的连续时间线。"
+    transition: "所有高光碎片向画面边缘退去。"
 
   - id: B7
-    duration_sec: 18
-    visual_state: "原人物继续走。屏幕边缘可短暂闪现其他地方的生活，但不再分屏占据主体。"
-    audio_state: "主体空间声稳定，远处其他声音只作为极轻的层。"
-    cognitive_function: "别处仍完整存在，但无需进入我的画面才能成立。"
-    transition: "停在一个普通动作上，不做宏大远景。"
+    duration_sec: 24
+    visual_state: "回到开场人物。画面不再解释任何物件意义，只让人物继续原本的动作与路线；镜头保持一个连续方向。极细的时间线/运动轨迹可以短暂出现又隐去。08:00:00最终跳到08:00:01。"
+    audio_state: "完整恢复主体空间声：脚步、风、车流、近处人声；声音重新有方向、距离和停顿。"
+    cognitive_function: "把‘人生串行’直接变成时间动作：不是选出了正确片段，而是这一秒确实接到了下一秒。"
+    transition: "其他世界可在边缘短暂闪现，但不重新分屏占据主体。"
 
   - id: B8
     duration_sec: 12
-    visual_state: "一个普通早晨继续。无总结性蒙太奇。"
-    audio_state: "自然声，音乐只允许极轻进入。"
-    cognitive_function: "开放结束：世界并行，人生串行。"
-    transition: "黑场或停帧。"
+    visual_state: "人物继续向前。别处的生活仍存在，但只以边缘、反射、远窗或极短视觉回声存在；主画面保持单一、连续、普通。"
+    audio_state: "自然声为主；音乐如进入，只能极轻，不承担结论。"
+    cognitive_function: "开放结束：世界继续并行，我继续沿这一条线进入下一秒。"
+    transition: "自然停在普通动作或黑场。"
 
 narration_policy:
   style: "第一人称思考，不抢在画面前解释。"
@@ -87,25 +103,33 @@ narration_policy:
 text_policy:
   allow:
     - "08:00:00"
-    - "极少量章节词"
+    - "08:00:01"
+    - "AI摘要段极少量必要信息"
   avoid:
     - "大段哲学字幕"
     - "世界各城市地名堆叠"
     - "鸡汤式总结句"
+    - "把‘世界并行，人生串行’当口号反复打在屏幕上"
 
 must_preserve:
-  - "分屏增殖到视觉失效，是核心视觉论证"
+  - "分屏增殖到观看失效，是核心视觉论证"
+  - "逐个回放、AI总结、只选精彩必须依次真正满足，而不是稻草人式否定"
+  - "最终视觉证明是08:00:00进入08:00:01，而不是杯子或其他象征物"
   - "回到单一生活后，声音必须重新变得具体"
   - "别处生活不是被否定，而是继续完整存在"
-  - "结尾不落到遗憾和缺失"
+  - "结尾不落到遗憾、缺失、宿命或珍惜当下的劝诫"
   - "不做旅游宣传片式世界蒙太奇"
 
 renderer_handoff:
+  preferred_renderer: "renderers/art-motion"
+  production_design: "renderers/art-motion/F01-production-design.md"
   next:
-    - "Director Proposal"
+    - "Motion Plan"
     - "Storyboard"
     - "Asset Plan"
+    - "Voice Timing"
     - "Audio Timeline"
+    - "First-frame style tests"
   locked:
     - "core cognitive turn"
     - "visual argument"

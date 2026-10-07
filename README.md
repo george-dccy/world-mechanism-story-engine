@@ -15,6 +15,7 @@
 → Content Master  
 → **Expression Concept（如 Video Concept）**  
 → **Director Proposal**  
+→ **Motion / Medium Plan**  
 → Storyboard / Asset Plan / Audio Timeline  
 → Renderer / Production + QA  
 → Retrospective
@@ -49,9 +50,11 @@ Creative Director 当前优先级：
 → 同时体验全部 → 逐个回放 → AI总结 → 只选最精彩  
 → 最终从“覆盖更多世界”转向“世界并行，人生串行”。
 
-F01 v0.3 进一步验证：
+F01 v0.4 明确：
 
-> **时间不仅让事情流逝，还让第二次出现的普通动作拥有第一次没有的意义。**
+> **时间在这里首先不是‘重复赋予小事意义’，而是让第一人称经验只能从这一刻进入下一刻。**
+
+因此别处正在发生的完整生活，不是“我这里缺掉的一块”。
 
 ## Video Concept Layer
 
@@ -66,32 +69,52 @@ Video Concept 先定义：
 - Must Preserve。
 
 F01 的核心 Visual Proof：
-> 分屏越分越多，直到所有生活都难以真正观看；随后突然只剩一个窗口，空间声重新清楚。
+
+1. 分屏越分越多，直到所有生活都难以真正观看；
+2. 逐个回放形成几乎没有尽头的长卷；
+3. AI摘要让信息更完整，却让空间与关系消失；
+4. 最精彩的片段仍然只是互不连续的片段；
+5. 最后所有视觉系统撤走，只剩一个人物从 `08:00:00` 连续走进 `08:00:01`。
 
 ## Director Proposal Layer
 
 Director Proposal 不重写机制，而把 Video Concept 转成可生产的导演决策：
 - 固定人物策略；
-- Ordinary Anchors；
 - Visual / Sound Grammar；
 - Sequence Map；
 - Asset Strategy；
 - Production Risks；
 - Locked / Flexible。
 
-F01 首次实跑采用三个普通锚点：
-- 杯子总被放到左手边；
-- 早餐摊一句“还是老样子？”；
-- 校门口一次很轻的挥手。
+F01 v0.4 已删除“杯子固定放在左手边”的重复赋义路线，不再用额外生活故事证明时间。
 
-它们不是“感人细节”，而是让观众亲自发现：
-> **同一个动作因为有了前文，第二次已经不是第一次。**
+## Art Motion Renderer
+
+首个正式生产 Renderer：`renderers/art-motion/`。
+
+底层锁定并完整接入 MIT 项目 `alchaincyf/huashu-art-motion`：
+- 35 种艺术风格；
+- 9 种动画/解说语法；
+- 参数化片段；
+- 长卷；
+- 角色合成；
+- 转场、音乐与 QA。
+
+本项目在其上增加 **Cognitive Motion Routing**：
+
+> 不按“哪种画风最漂亮”路由，而按“这一段要让观众经历什么认知动作”路由。
+
+F01 的第一支 production 采用：
+
+> **Real → Many Worlds → Information → Highlights → Real**
+
+多风格本身承担“世界并行”的论证，最终越接近结论，视觉反而越简单。
 
 ## Golden / Candidate / Retired
 
 - A08：Golden Case
 - S01：Golden Case
-- F01：Golden Candidate v0.3
+- F01：Golden Candidate v0.4 / first production case
 - H01：Retired Case
 
 ## 不变边界
@@ -105,4 +128,5 @@ F01 首次实跑采用三个普通锚点：
 7. F / I / H / R 必须分层。
 8. 一个题可以被正式 Retire；沉没成本不是继续做的理由。
 9. Renderer 不能把 Content Master 降格成“旁白配图”。
-10. Video Concept 与 Director Proposal 的锁定项不能为了“更电影感”被生产层改写。
+10. Video Concept 与 Director Proposal 的锁定项不能为了“更电影感”或“更多画风”被生产层改写。
+11. 多风格必须承担叙事/认知功能，不能把作品变成能力 showreel。

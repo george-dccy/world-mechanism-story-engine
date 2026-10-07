@@ -1,0 +1,201 @@
+id: F01-world-second-motion
+version: "0.1"
+status: prototype-ready
+source_content_master: content-masters/F01-you-cant-live-a-second.md
+source_video_concept: examples/video-concepts/F01-one-second-world.yaml
+source_director_proposal: examples/director-proposals/F01-one-second-world.yaml
+renderer: renderers/art-motion
+upstream_engine: third_party/huashu-art-motion
+
+master:
+  duration_sec: 126
+  fps: 60
+  preferred_direction: "A_real_many_worlds_real"
+  primary_canvas: "1920x1080"
+  vertical_derivative: "1080x1920 after master picture lock"
+  deterministic_seed: 20261007
+
+production_policy:
+  - "Script meaning is locked upstream; Motion Plan may compress narration but may not add a new thesis."
+  - "A style change must correspond to a cognitive or spatial change."
+  - "One sequence has one primary animation grammar; multi-window sequences may contain different styles inside windows."
+  - "Visual Proof beats may include deliberate narration gaps."
+  - "S2, S4 and S7 are prototype gates before full-film rendering."
+
+sequences:
+  - id: S1
+    start_sec: 0
+    end_sec: 15
+    prototype_gate: false
+    cognitive_job: "enter one concrete first-person-adjacent life before asking for more worlds"
+    grammar: "continuous_observational_scene"
+    style:
+      primary: "realistic generated character + restrained code-drawn environment"
+      alternatives: ["24_hopper", "16_2026"]
+    camera: "35–50mm-equivalent natural observation; 3–4 shots; no dramatic push-ins"
+    action: "ordinary adult leaves home area, passes breakfast activity, waits/crosses at street, continues toward the day"
+    text_cues:
+      - at_sec: 13.5
+        text: "08:00:00"
+    transition: "timestamp holds while frame splits into two"
+    audio_cue: "single readable morning sound field with direction and distance"
+    narration_sync: "lock after narration cut and word timestamps"
+    subtitle_safe_zone: "bottom 18% reserved; avoid important faces/hands"
+
+  - id: S2
+    start_sec: 15
+    end_sec: 33
+    prototype_gate: true
+    prototype_range_sec: [15, 23]
+    cognitive_job: "make simultaneous access to more worlds genuinely attractive before overload"
+    grammar: "multi_window_multi_style"
+    style:
+      window_pool:
+        - {id: W01, motif: "after-work door push", style: "24_hopper"}
+        - {id: W02, motif: "rain umbrella entering home", style: "17_ink"}
+        - {id: W03, motif: "seaside run", style: "28_monet"}
+        - {id: W04, motif: "bringing laundry in", style: "16_2026"}
+        - {id: W05, motif: "late small restaurant meal", style: "24_hopper"}
+        - {id: W06, motif: "child learning bicycle", style: "16_2026 + generated sprites"}
+        - {id: W07, motif: "late-night transit wait", style: "14_8bit"}
+        - {id: W08, motif: "watering balcony plants at dusk", style: "30_matisse"}
+    camera: "shared frame stays stable while window geometry multiplies 2→4→8→16"
+    action: "each window contains a legible main action plus low-cost motif loop"
+    transition: "continue grid multiplication without reset"
+    audio_cue: "add one spatial sound field per new world; preserve intelligibility through 8 windows"
+    narration_sync: "prefer narration until desire is established; allow last 1–2s to breathe"
+    subtitle_safe_zone: "subtitle overlay sits above window grid; never dedicate one content window to subtitles"
+    upstream_refs:
+      - "references/03-一帧先行四条路线.md"
+      - "references/04-纯代码绘制.md"
+      - "references/风格配方/INDEX.md"
+
+  - id: S3
+    start_sec: 33
+    end_sec: 43
+    prototype_gate: false
+    cognitive_job: "prove that maximum simultaneous coverage destroys foreground attention"
+    grammar: "window_multiplication_sound_overload"
+    style: "inherit S2 worlds; reduce per-window detail as scale falls"
+    camera: "stable macro frame; grid reaches 64+ windows"
+    action: "all windows keep moving; no frozen thumbnails"
+    transition: "0.2–0.4s abrupt silence and collapse to one window"
+    audio_cue: "layer fields until individually unreadable, then hard cut to silence"
+    narration_sync: "minimal narration; visual and sound proof lead"
+    subtitle_safe_zone: "no new explanatory subtitles during peak overload"
+
+  - id: S4
+    start_sec: 43
+    end_sec: 60
+    prototype_gate: true
+    prototype_range_sec: [43, 51]
+    cognitive_job: "honestly test sequential replay and make the unseen remainder feel endless"
+    grammar: "long_scroll_endless_queue"
+    style: "multi-style worlds arranged in one continuous spatial scroll"
+    camera: "camera advances only forward through the scroll; unseen queue stays visible"
+    action: "one life expands to readable scale, passes, next life arrives; queue keeps replenishing"
+    transition: "entire long scroll compresses spatially into an information object"
+    audio_cue: "each selected world briefly regains concrete sound, then is cut off by next"
+    narration_sync: "anchor to '存下来，我一个一个看' and '连世界的一秒都活不完'"
+    subtitle_safe_zone: "keep text outside scroll's main focal lane"
+    upstream_refs:
+      - "references/11-长卷穿越片.md"
+      - "scripts/engine/demos/long_scroll/"
+
+  - id: S5
+    start_sec: 60
+    end_sec: 75
+    prototype_gate: false
+    cognitive_job: "show the efficiency and limitation of knowing through summary"
+    grammar: "t2_keynote_ui"
+    secondary_grammar: "restrained_y5_kinetic_type_on_spoken_keywords_only"
+    style: "neutral dark/light information field; not a real product UI"
+    camera: "one screen = one focal object; modest glass/card motion only"
+    action: "world becomes categories, counts, representative image and concise labels"
+    transition: "summary produces a curated-highlights proposition"
+    audio_cue: "clean centered voice with little/no spatial ambience"
+    narration_sync: "numbers/keywords land on spoken word timestamps"
+    subtitle_safe_zone: "strict bottom safe zone; interface content stays above it"
+    upstream_refs:
+      - "references/动画语法/t2_keynote_ui.md"
+      - "references/动画语法/y5_kinetic_type.md"
+
+  - id: S6
+    start_sec: 75
+    end_sec: 90
+    prototype_gate: false
+    cognitive_job: "fully satisfy highlight selection, then reveal disconnected fragments without lecturing"
+    grammar: "short_art_style_speedrun"
+    style:
+      highlight_pool:
+        - {motif: "sunset", style: "35_shinkai"}
+        - {motif: "championship win", style: "13_pop"}
+        - {motif: "reunion", style: "30_matisse"}
+        - {motif: "proposal", style: "18_klimt"}
+        - {motif: "seaside moment", style: "08_impressionism"}
+    camera: "2–3s per highlight; main action → motif loop → signature transition"
+    action: "4–6 excellent moments play at full confidence, then shrink into separate cards with no shared spatial continuity"
+    transition: "cards retreat toward edges and reveal original protagonist world"
+    audio_cue: "short local sound per highlight; final cards have no common ambience; leave 1–2s explanatory silence"
+    narration_sync: "narration can stop as cards separate"
+    subtitle_safe_zone: "do not cover signature action or transition center"
+    upstream_refs:
+      - "references/02-机制.md"
+      - "references/05-节奏与配乐.md"
+      - "references/风格配方/INDEX.md"
+
+  - id: S7
+    start_sec: 90
+    end_sec: 114
+    prototype_gate: true
+    prototype_range_sec: [96, 106]
+    cognitive_job: "turn serial life into a direct temporal action rather than a symbol"
+    grammar: "single_world_continuous_camera"
+    style: "return exactly to S1 visual language"
+    camera: "continuous directional follow; complexity and cut frequency collapse"
+    action: "protagonist resumes unfinished movement from opening; the world simply continues"
+    text_cues:
+      - {at_sec: 103.0, text: "08:00:00"}
+      - {at_sec: 104.0, text: "08:00:01"}
+    optional_experiment: "a hairline trajectory may trail for 0.5–1s; delete if it reads as philosophical diagram"
+    transition: "other lives return only as peripheral reflections/echoes, never full split screen"
+    audio_cue: "restore complete concrete spatial sound with direction, distance and natural pauses"
+    narration_sync: "leave room around timestamp change; do not explain it immediately"
+    subtitle_safe_zone: "no subtitle across timestamp transition if possible"
+
+  - id: S8
+    start_sec: 114
+    end_sec: 126
+    prototype_gate: false
+    cognitive_job: "let other lives remain real without competing with this life for completeness"
+    grammar: "single_world_coda"
+    style: "S1/S7 world with subtle peripheral echoes"
+    camera: "simple observation/follow; no summary montage"
+    action: "protagonist continues; other lives appear only in reflection, distant windows or edge echoes"
+    transition: "ordinary action or black"
+    audio_cue: "main-world ambience stays whole; music may enter only as a very light layer"
+    narration_sync: "carry final lines, then allow natural tail"
+    subtitle_safe_zone: "standard bottom safe zone"
+
+prototype_acceptance:
+  S2:
+    - "2→8 windows remain individually legible before multiplication becomes a problem"
+    - "different styles feel like different worlds but still belong to one film"
+    - "the viewer wants more before feeling overload"
+  S4:
+    - "the currently watched life is genuinely readable"
+    - "the remaining queue visibly feels unfinishable"
+    - "movement feels like a world canvas, not a UI carousel"
+  S7:
+    - "08:00:00→08:00:01 reads without explanatory voiceover"
+    - "return to concrete sound is emotionally and cognitively stronger than adding spectacle"
+    - "no cup/repeated ritual is needed"
+
+next_artifacts:
+  - "02-keyframe-directions.md / stills A-B-C"
+  - "03-prototypes/S2-world-open.mp4"
+  - "03-prototypes/S4-long-scroll.mp4"
+  - "03-prototypes/S7-next-second.mp4"
+  - "04-narration/narration-cut.md"
+  - "04-narration/words.json"
+  - "05-rough-cut/"
